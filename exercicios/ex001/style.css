@@ -1,0 +1,11 @@
+body{ 
+    background-color: black;
+}
+h1{
+    color: aqua;
+    font-size: larger;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+    color: aqua;
+}
