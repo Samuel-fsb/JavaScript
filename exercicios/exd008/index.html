@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Das Mensagens</title>
+    <style>
+        button{
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio Das Mensagens</h1>
+    <button onclick="botao1()">Botão 1</button>
+    <button onclick="botao2()">Botão 2</button>
+    <button onclick="botao3()">Botão 3</button>
+    
+    <h1>Boas Vindas</h1>
+    <button onclick="boasvindas()">Inicie o Desafio</button>
+    <section id="pergunta">
+        <p>Aqui vai o seu nome e idade...</p>
+    </section>
+    
+    <script>
+        function botao1(){
+            window.alert('Você clicou no botão 1')
+            
+        }
+        function botao2(){
+            window.alert('Você clicou no botão 2')
+        }
+        function botao3(){
+            window.alert('Você clicou no botão 3')
+        }
+
+        function boasvindas(){
+        let nome = window.prompt('Qual é o seu nome?')
+        let anos = window.prompt('Qual é a sua idade?')
+    
+        let per = window.document.getElementById('pergunta')
+        per.innerHTML = `<p>O seu nome é ${nome} e sua idade é ${anos} anos`
+        
+        }
+
+    </script>
+</body>
+</html>
