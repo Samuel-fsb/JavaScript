@@ -1,13 +1,24 @@
 function pergunta(){
-    let nome = window.prompt('Qual é o seu nome?')
-    window.alert(`É um prazer em lhe conhecer ${nome}`)
-    window.document.body.style.button.backgroundColor = 'blue'
+    let nome = window.prompt('Escreva a seu nome:')
+    let res = window.document.getElementById('resultado')
+    res.innerHTML = `<p> Olá, <strong>${nome} <strong/>, é um prezer em lhe conhecer! 
+    &#x1f596`
 }
 
 
 
-/*
-const clicou = 'você clicou no botão' =>{
 
-}
-    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
