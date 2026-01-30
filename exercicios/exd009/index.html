@@ -7,20 +7,59 @@
     <style>
         button{
             padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(236, 4, 4, 0.777);
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Antes e Depois</h1>
 
-    <button onclick="numero()">Antecessor e Sucessor</button>
+    <button onclick="calcular()">Antecessor e Sucessor</button>
+    <section id="res">
+        <p>Aqui vai aparecer o resultado...</p>
+    </section>
+
+    <h1>Calculando o Troco</h1>
+    <button onclick="comprar()">Comprar Produto</button>
+    <section id="comp">
+        <p>Aqui vai apracer o seu produto...</p>
+    </section>
+    <section id="val">
+        <p>Aqui vai aparecer o seu dinheiro e o troco...</p>
+    </section>
+    <section id="">
+
+    </section>
+
     <script>
-        function numero(){
-            let n1 = Number(window.prompt('Qual é o número que você está pensando?'))
-            let n2 = n1 - 1
-            let n3 = n1 + 1
-            window.alert(`Antes de ${n1}, temos o número ${n2} e depois de ${n1}, temos ${n3}`)
-        }
+        const calcular = () => {
+            let n1 = Number(window.prompt('Qual é o número que você está pensando?'));
+
+            if(!n1 && n1 !== 0) return;
+
+            let n2 = n1 - 1;
+            let n3 = n1 + 1;
+
+            let res = document.getElementById('res')
+            res.innerHTML = (`<p> Antes de ${n1}, temos o número ${n2} e depois de ${n1}, temos ${n3}</p>`);
+        };
+
+        function comprar(){
+            let produto = window.prompt('Qual produto você está comprando?')
+            let preco = Number(window.prompt(`Qual é o preço do ${produto} que você está comprando?`))
+            let valor = Number(window.prompt(`Qual foi o valor que você deu para comprar o ${produto}?`));
+
+            let troco = valor - preco;
+
+            let c = window.document.getElementById('comp')
+            c.innerHTML = (`Você comprou um ${produto} que custou R$${preco}`);
+
+            let v = window.document.getElementById('val')
+            v.innerHTML = (`Deu ${valor} de dinheiro e vai receber ${troco} de troco. Volte Sempre!`);
+        };
     </script>
 </body>
 </html>
