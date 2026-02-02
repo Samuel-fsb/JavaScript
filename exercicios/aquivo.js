@@ -17,12 +17,12 @@ function botao4(){
 };
 
 function conversor(){
-    let distancia = window.prompt('Digite uma distância em metros (m)')
-    let km = distancia * 1000
-    let hm = distancia * 1000
-    let dam = distancia * 1000
-    let dm = distancia * 1000
-    let cm = distancia * 1000
+    let distancia = Number(window.prompt('Digite uma distância em metros (m)'))
+    let km = distancia / 1000
+    let hm = distancia / 100
+    let dam = distancia / 10
+    let dm = distancia * 10
+    let cm = distancia * 100
 
     con.innerHTML = `<h2> A distância de ${distancia} metros, corresponte a...</h2> <P> ${km} Quilômetros (Km) <br> ${hm} Hectômetro (Hm) <br> ${dam} Decâmetros (Dam) <br> ${dm} Decímtros (dm) <br> ${cm} Centrímetros (cm)                                                       `
 }
