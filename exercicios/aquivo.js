@@ -29,3 +29,7 @@ function conversor(){
 
     converter.innerHTML += `<h2> A distância de ${distancia} metros, corresponte a...</h2> <P> ${km.toLocaleString('pt-BR')} Quilômetros (Km) <br> ${hm.toLocaleString('pt-BR')} Hectômetro (Hm) <br> ${dam.toLocaleString('pt-BR')} Decâmetros (Dam) <br> ${dm.toLocaleString('pt-BR')} Decímtros (dm) <br> ${cm.toLocaleString('pt-BR')} Centrímetros (cm) <br> ${mm.toLocaleString('pt-BR')} Milímetros (mm)</p>                                                    `
 }
+
+function limpar(){
+    converter.innerHTML = ('Aqui vai aparecer os resultados.')
+}
