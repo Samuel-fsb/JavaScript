@@ -16,6 +16,8 @@ function botao4(){
     res.innerHTML += ' <p> Você clicou no botão 4 </p> '
 };
 
+let converter = window.document.getElementById('con')
+
 function conversor(){
     let distancia = Number(window.prompt('Digite uma distância em metros (m)'))
     let km = distancia / 1000
@@ -23,6 +25,7 @@ function conversor(){
     let dam = distancia / 10
     let dm = distancia * 10
     let cm = distancia * 100
+    let mm = distancia * 1000
 
-    con.innerHTML = `<h2> A distância de ${distancia} metros, corresponte a...</h2> <P> ${km} Quilômetros (Km) <br> ${hm} Hectômetro (Hm) <br> ${dam} Decâmetros (Dam) <br> ${dm} Decímtros (dm) <br> ${cm} Centrímetros (cm)                                                       `
+    converter.innerHTML += `<h2> A distância de ${distancia} metros, corresponte a...</h2> <P> ${km.toLocaleString('pt-BR')} Quilômetros (Km) <br> ${hm.toLocaleString('pt-BR')} Hectômetro (Hm) <br> ${dam.toLocaleString('pt-BR')} Decâmetros (Dam) <br> ${dm.toLocaleString('pt-BR')} Decímtros (dm) <br> ${cm.toLocaleString('pt-BR')} Centrímetros (cm) <br> ${mm.toLocaleString('pt-BR')} Milímetros (mm)</p>                                                    `
 }
