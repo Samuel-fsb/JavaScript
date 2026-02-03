@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        button{
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            background-color: brown;
+            cursor: pointer;
+            box-shadow: 123px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="conversor()">Converter</button>
+    <p>Clique no botão acima para iniciar...</p>
+
+    <section id="res">
+        <h2>Os resultados aparecerão abaixo</h2>
+        <p>°K (Kelvin)</p>
+        <p>°F (Fahrenheit)</p>
+    </section>
+
+    <script>
+        let resp = document.getElementById('res');
+
+        let graus = Number(window.prompt('Digite uma temperatura em C° (Celsius)'));
+        let kelvin = grus
+        let Fahrenheit = grus 
+
+        resp.innerHTML = `<h2> A temperatura de ${graus} corresponte a... </h2/> <p> ${kelvin}°K (Kelvin) </p> <p>${fahrenheit}°F (Fahrenheit)</p>`
+    </script>
+</body>
+</html>
