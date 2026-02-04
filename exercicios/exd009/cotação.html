@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotação do Dólar</title>
+    <style>
+        button{
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            background-color: brown;
+            cursor: pointer;
+            box-shadow: 123px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <button onclick="reais()">Converter</button>
+
+    <section id="dim">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        let real = document.getElementById('dim');
+
+        let D = Number(window.prompt('Antes de mais nada. Qual é a cotação do dólar atual?'));
+        
+        function reais(){
+            let dinheiro = Number(window.prompt('Quantos reais você tem na carteira?'))
+            let dolar = D / dinheiro
+
+            real.innerHTML = `<p>O dinheiro que você tem que é ${dinheiro}, pode ser convertido em ${dolar} dólares americanos.</p>`
+        };
+        
+    </script>
+</body>
+</html>
