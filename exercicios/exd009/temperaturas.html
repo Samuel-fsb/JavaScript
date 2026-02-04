@@ -29,11 +29,14 @@
     <script>
         let resp = document.getElementById('res');
 
-        let graus = Number(window.prompt('Digite uma temperatura em C° (Celsius)'));
-        let kelvin = grus
-        let Fahrenheit = grus 
+        function conversor(){
+            let graus = Number(window.prompt('Digite uma temperatura em C° (Celsius)'));
+            let kelvin = graus + 273
+            let F = graus * 1.8
+            let fahrenheit = F + 32
 
-        resp.innerHTML = `<h2> A temperatura de ${graus} corresponte a... </h2/> <p> ${kelvin}°K (Kelvin) </p> <p>${fahrenheit}°F (Fahrenheit)</p>`
+            resp.innerHTML = `<h2> A temperatura de ${graus} corresponte a... </h2/> <p> ${kelvin.toLocaleString('pt-br')}°K (Kelvin) </p> <p>${fahrenheit.toLocaleString('pt-br')}°F (Fahrenheit)</p>`
+            };
     </script>
 </body>
 </html>
