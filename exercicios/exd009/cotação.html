@@ -23,18 +23,40 @@
         <p>Clique no botão acima para iniciar.</p>
     </section>
 
+    <h1>Calcular Desconto</h1>
+    <button onclick="desconto()">Desconto de 10%</button>
+
+    <section id="des">
+        <h1></h1>
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+
     <script>
         let real = document.getElementById('dim');
 
-        let D = Number(window.prompt('Antes de mais nada. Qual é a cotação do dólar atual?'));
-        
         function reais(){
-            let dinheiro = Number(window.prompt('Quantos reais você tem na carteira?'))
+            let D = Number(window.prompt('Antes de mais nada. Qual é a cotação do dólar atual?'));
+            
+            let dinheiro = Number(window.prompt('Quantos reais você tem na carteira?'));
             let dolar = D / dinheiro
 
-            real.innerHTML = `<p>O dinheiro que você tem que é ${dinheiro}, pode ser convertido em ${dolar} dólares americanos.</p>`
+            real.innerHTML = `<p>O dinheiro que você tem que é ${dinheiro} e ele pode ser convertido em ${dolar} dólares americanos.</p>`
         };
-        
+
+        let desco = document.getElementById('des')
+
+        function desconto(){
+            let produto = window.prompt('Qual é o produto que você está comprando?');
+            let preco = Number(window.prompt(`Qual é o preço do ${produto}`));
+            let discont = preco * 0.10
+            let novopreco = preco - discont
+
+            desco.innerHTML = `<h1>Calculando o Desconto de 10% para o ${produto}</h1> 
+                <p>O preço original era de ${preco}</p>
+                <p>Você acaba de ganhar ${discont.toLocaleString('pt-br', { minimumFractionDigits: 2, maximumFractionDigits:2 })} (-10)</p> 
+                <p>No fim, você vai pagar ${novopreco.toLocaleString('pt-br', { maximumFractionDigits: 2, minimumFractionDigits:2 })} do ${produto}</p>`
+        };
     </script>
 </body>
 </html>
