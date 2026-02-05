@@ -29,15 +29,16 @@
 
         function reajustar(){
             let nome = window.prompt('Qual é o nome do funcionário?');
-            let salario = window.prompt(`Qual é o salário de ${nome}`);
-            let reajuste = window.prompt(`O salário de ${nome} será reajustado em qual porcentagem?`);
+            let salario = Number(window.prompt(`Qual era o antigo salário de ${nome}`));
+            let reajuste = Number(window.prompt(`O salário de ${nome} será reajustado em qual porcentagem?`));
+            
+            let novoreajuste = reajuste / 100
+            let porcento = salario * novoreajuste
+            let novosalario2 = porcento + salario
 
-            let novosalario = r
-            let porcento = 
-
-        reaju.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2> <p>O salário atual era de ${salario}</p>
-        <p>Com um aumento de ${reajuste}, o salário vai aumentar ${porcento} no próximo mês.</p>
-        <p>E a partir daí, ${nome} vai passar a ganhar ${novosalario}</p>`
+        reaju.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2> <p>O salário antigo era de ${salario}</p>
+        <p>Com um aumento de ${reajuste}%, o salário vai aumentar ${porcento.toLocaleString('pt-br', {maximumFractionDigits: 2} , { minimumFractionDigits:2 })} reais no próximo mês.</p>
+        <p>E a partir daí, ${nome} vai passar a ganhar ${novosalario2.toLocaleString('pt-br', {maximumFractionDigits:2}, {minimumFractionDigits:2})}</p>`
         };
     </script>
 </body>
