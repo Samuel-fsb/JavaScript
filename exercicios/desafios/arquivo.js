@@ -38,7 +38,7 @@
         console.log(valordodesconto(300))
         console.log(valordodesconto(200))*/
 
-const processarvenda = (valordavenda, categoria) => {
+/*const processarvenda = (valordavenda, categoria) => {
 
     let comissao = 0;
     let status = "";
@@ -70,7 +70,42 @@ const processarvenda = (valordavenda, categoria) => {
     };
 };
 
-console.log(processarvenda(0, "vestuario"))
+console.log(processarvenda(0, "vestuario"))*/
+
+
+
+
+
+
+const checarSemaforo = cor => {
+
+    let cores; 
+
+    switch (cor.toLowerCase()){
+        case "verde":
+            cores = "Pode passar";
+        break;
+
+        case "amarelo":
+            cores = "Tenha cuidado ao passar";
+        break;
+
+        case "vermelho":
+            cores = "Não passe!";
+        break;
+
+        default:
+            cores = "Cor inválida";
+
+        };
+        
+        return{ cores };
+};
+
+console.log(checarSemaforo("Vermelho"))
+
+
+
 
 
 
