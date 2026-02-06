@@ -1,4 +1,4 @@
-const calculartotal = (valorbase) => {
+/*const calculartotal = (valorbase) => {
             let valorfinal;        
 
             if (valorbase >= 500){
@@ -36,10 +36,41 @@ const calculartotal = (valorbase) => {
         };
 
         console.log(valordodesconto(300))
-        console.log(valordodesconto(200))
+        console.log(valordodesconto(200))*/
 
+const processarvenda = (valordavenda, categoria) => {
 
+    let comissao = 0;
+    let status = "";
 
+    switch (categoria){
+        case "eletronico":
+            comissao = valordavenda * 0.10;
+            status = "Venda de alta prioridade";
+        break;
+
+        case "vestuario":
+            comissao = valordavenda * 0.05;
+            status = "Venda padrão";
+        break;
+
+        case "alimento":
+            comissao = valordavenda * 0.02;
+            status = "venda de giro rápido";
+        break;
+
+        default:
+            comissao = 0;
+            status = "Categoria não categorizada";
+    }
+        
+    return{
+        comissao: comissao,
+        status: status
+    };
+};
+
+console.log(processarvenda(0, "vestuario"))
 
 
 
