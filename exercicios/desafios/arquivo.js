@@ -72,12 +72,7 @@
 
 console.log(processarvenda(0, "vestuario"))*/
 
-
-
-
-
-
-const checarSemaforo = cor => {
+/*const checarSemaforo = cor => {
 
     let cores; 
 
@@ -102,10 +97,22 @@ const checarSemaforo = cor => {
         return{ cores };
 };
 
-console.log(checarSemaforo("Vermelho"))
+console.log(checarSemaforo("Vermelho"))*/
 
 
+const gerarGritos = (quantidade) => {
 
+    let grito = "";
+
+    for(let i = 0; i < quantidade ; i++){
+        grito += "Ei!";
+    };
+
+    return grito;
+
+};
+
+console.log(gerarGritos(5))
 
 
 
