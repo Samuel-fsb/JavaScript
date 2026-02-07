@@ -1,4 +1,4 @@
-const tocarMusica = (musica) => {
+/*const tocarMusica = (musica) => {
     
     let som = "";
 
@@ -27,4 +27,29 @@ const tocarMusica = (musica) => {
 
 };
 
-console.log(tocarMusica(["mi", "re", "do", "do"]))
+console.log(tocarMusica(["mi", "re", "do", "do"]))*/
+
+
+const localizarItens = (localizar) => {
+
+    let itens = "";
+
+    for(let i = 0; i < localizar.length ;i++){
+
+        switch (localizar[i]){
+            case ""
+        };
+
+    };
+
+    return { itens }
+};
+
+console.log(localizarItens([]))
+
+
+
+
+
+
+
