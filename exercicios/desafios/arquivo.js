@@ -1,4 +1,4 @@
-/*const calculartotal = (valorbase) => {
+const calculartotal = (valorbase) => {
             let valorfinal;        
 
             if (valorbase >= 500){
@@ -36,9 +36,9 @@
         };
 
         console.log(valordodesconto(300))
-        console.log(valordodesconto(200))*/
+        console.log(valordodesconto(200))
 
-/*const processarvenda = (valordavenda, categoria) => {
+const processarvenda = (valordavenda, categoria) => {
 
     let comissao = 0;
     let status = "";
@@ -70,9 +70,9 @@
     };
 };
 
-console.log(processarvenda(0, "vestuario"))*/
+console.log(processarvenda(0, "vestuario"))
 
-/*const checarSemaforo = cor => {
+const checarSemaforo = cor => {
 
     let cores; 
 
@@ -97,7 +97,7 @@ console.log(processarvenda(0, "vestuario"))*/
         return{ cores };
 };
 
-console.log(checarSemaforo("Vermelho"))*/
+console.log(checarSemaforo("Vermelho"))
 
 
 const gerarGritos = (quantidade) => {
