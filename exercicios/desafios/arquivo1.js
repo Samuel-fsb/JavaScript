@@ -36,16 +36,30 @@ const localizarItens = (localizar) => {
 
     for(let i = 0; i < localizar.length ;i++){
 
-        switch (localizar[i]){
-            case ""
+        switch (localizar[i].toLowerCase()){
+            case "leite":
+            case "queijo":
+                itens += "frios ";
+                break;
+
+            case "pao":
+                itens += "padaria ";
+                break;
+
+            case "shampoo":
+                itens += "Higiene ";
+                break;
+
+            default:
+                itens += "Protuto não encontrado";
         };
 
     };
 
-    return { itens }
+    return { itens };
 };
 
-console.log(localizarItens([]))
+console.log(localizarItens(["leite", "queijo", "pao", "cafe"]))
 
 
 
