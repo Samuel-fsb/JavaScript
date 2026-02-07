@@ -27,7 +27,7 @@
 
 };
 
-console.log(tocarMusica(["mi", "re", "do", "do"]))*/
+console.log(tocarMusica(["mi", "re", "do", "do"]))
 
 
 const localizarItens = (localizar) => {
@@ -61,9 +61,34 @@ const localizarItens = (localizar) => {
 
 console.log(localizarItens(["leite", "queijo", "pao", "cafe"]))
 
+const numbers = [1, 2, 3, 4, 5];
 
+const numberMultiplieByTwo = numbers.map(function(number){
+    return number * 2;
+});
 
+console.log(numberMultiplieByTwo);
 
+const novaListaDeAlimentos = ["leite", "cuscuz", "carne"];
 
+const novaLista = novaListaDeAlimentos.map(function(nova){
+    return nova += "alimento ";
+    
+    console.log(novaLista);
+    });
 
+const ages = [9, 3, 4, 2, 5, 7, 8]
 
+const evenAges = ages.filter(function(age){
+    return age % 2 === 0;
+});
+
+console.log(evenAges);*/
+
+const ages = [2, 34, 56, 78, 89];
+
+const sumOfAges = ages.reduce(function(age, accumulator){
+    return accumulator + age;
+}, 200);
+
+console.log(sumOfAges);
