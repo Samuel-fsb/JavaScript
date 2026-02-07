@@ -1,29 +1,30 @@
 const tocarMusica = (musica) => {
-    let notas = ["do", "re", "mi"];
+    
     let som = "";
 
-    for(let i = 0; i < notas.length ;i++){
+    for(let i = 0; i < musica.length ;i++){
 
-        switch(musica.toLowerCase()){
+        switch(musica[i].toLowerCase()){
             case "do":
-                notas[i] = "BOM";
-            break;
-                notas[i] = "DIM";
+                som += "BOM ";
+                break;
+
             case "re":
-                notas[i] = "DAN";
-            break;
-
+                som += "DIM ";
+                break;
+                
             case "mi":
-
-            break;
+                som += "DAN ";
+                break;
 
             default:
-        }
+                som += "? ";
+        };
 
     };
 
-    return {}
+    return { som };
 
 };
 
-console.log(tocarMusica())
+console.log(tocarMusica(["mi", "re", "do", "do"]))
