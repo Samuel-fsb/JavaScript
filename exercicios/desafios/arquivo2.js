@@ -24,10 +24,22 @@ const numerosSomados = numeros.map(s => {
 });
 
 console.log(numerosSomados);
-*/
 
 const precos = [10 , 25, 50];
 
 const NovosPrecos = precos.map(cifrao => `R$ ${cifrao}`);
 
 console.log(NovosPrecos);
+*/
+/*
+const Menores = idades.filter(function(menor){
+    const M = menor >= 18;
+    return M;
+});
+*/
+
+const idades = [12, 23, 14, 34, 17];
+
+const Menores = idades.filter(menor => menor >= 18);
+
+console.log(Menores);
