@@ -15,7 +15,6 @@ users.forEach(cliente = (item, index) => {
         console.log(`O cliente ${item.name}, posição ${index} é menor de idade.`)
     };
 });
-*/
 
 const numeros = [2, 4, 5, 6, 8, 9];
 
@@ -25,3 +24,10 @@ const numerosSomados = numeros.map(s => {
 });
 
 console.log(numerosSomados);
+*/
+
+const precos = [10 , 25, 50];
+
+const NovosPrecos = precos.map(cifrao => `R$ ${cifrao}`);
+
+console.log(NovosPrecos);
