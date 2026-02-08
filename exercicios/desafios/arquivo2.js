@@ -4,9 +4,15 @@ const users = [
     { name: 'Aline', age: 40, contact: '(45) 98765-0943' },
     { name: 'Maria', age: 12, contact: '(87) 97609-4576' },
 ];
-
+/*
 users.forEach(usuarios = (item, index, array) => {
     console.log(item);
     console.log(index);
     console.log(array);
+});
+*/
+users.forEach(function(item, index){
+    if(item.age < 18){
+        console.log(`O cliente ${item.name}, posição ${index} é menor de idade.`)
+    };
 });
