@@ -51,17 +51,46 @@ const TotalXP = missoesXP.reduce((acumulador, atual) => {
 
 
 console.log(TotalXP);
-*/
-
 
 const notas = [4, 8, 5, 10, 7];
 
 const notasM7 = notas.filter(n => n >= 7)
-                     .map(n => `Aprovado com ${n}`)
+.map(n => `Aprovado com ${n}`)
 
 const TotalAprovados = notasM7.reduce(acumulador => acumulador + 1, 0);
 
 console.log(notasM7);
 console.log(`O total de aprovados é ${TotalAprovados}!`);
+*/
 
-console.log();
+const pizzas = [
+    "mussarela",
+    "calabreza",
+    "portuguesa",
+    "marguerita"
+];
+
+const FoundPizza = pizzas.find( p => p.startsWith("p"));
+
+console.log( FoundPizza );
+
+const fruits = [
+    { name: "jaca", quantity: 2 },
+    { name: "banana", quanitty: 0 },
+    { name: "cereja", quantity: 5 }
+];
+
+const foundFruit = fruits.find( fruit => fruit.name === "banana");
+
+
+console.log(foundFruit);
+
+
+const numero = [1, 3, 5, 6, 7];
+
+
+console.log(numero);
+console.log(numero.push(532))
+console.log(numero)
+console.log(numero.pop())
+console.log(numero)
