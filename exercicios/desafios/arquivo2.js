@@ -47,7 +47,7 @@ const missoesXP = [150, 50, 300, 200];
 
 const TotalXP = missoesXP.reduce((acumulador, atual) => {
     return acumulador + atual;
-}, 0);
+}, 50);
 
 
 console.log(TotalXP);
@@ -58,10 +58,10 @@ const notas = [4, 8, 5, 10, 7];
 
 const notasM7 = notas.filter(n => n >= 7)
                      .map(n => `Aprovado com ${n}`)
-                     .reduce((acumulador, atual) => {
-                        acumulador + atual;
-                     }, 0);
+
+const TotalAprovados = notasM7.reduce(acumulador => acumulador + 1, 0);
 
 console.log(notasM7);
-console.log();
+console.log(`O total de aprovados é ${TotalAprovados}!`);
+
 console.log();
