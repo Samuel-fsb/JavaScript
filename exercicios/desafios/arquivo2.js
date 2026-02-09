@@ -36,10 +36,19 @@ const Menores = idades.filter(function(menor){
     const M = menor >= 18;
     return M;
 });
-*/
 
 const idades = [12, 23, 14, 34, 17];
 
-const Menores = idades.filter(menor => menor >= 18);
+const Maiores = idades.filter(menor => menor >= 18);
 
-console.log(Menores);
+console.log(Maiores);
+*/
+
+const missoesXP = [150, 50, 300, 200];
+
+const TotalXP = missoesXP.reduce((acumulador, atual) => {
+    return acumulador + atual;
+}, 50);
+
+
+console.log(TotalXP);
