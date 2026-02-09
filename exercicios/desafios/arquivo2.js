@@ -42,13 +42,26 @@ const idades = [12, 23, 14, 34, 17];
 const Maiores = idades.filter(menor => menor >= 18);
 
 console.log(Maiores);
-*/
 
 const missoesXP = [150, 50, 300, 200];
 
 const TotalXP = missoesXP.reduce((acumulador, atual) => {
     return acumulador + atual;
-}, 50);
+}, 0);
 
 
 console.log(TotalXP);
+*/
+
+
+const notas = [4, 8, 5, 10, 7];
+
+const notasM7 = notas.filter(n => n >= 7)
+                     .map(n => `Aprovado com ${n}`)
+                     .reduce((acumulador, atual) => {
+                        acumulador + atual;
+                     }, 0);
+
+console.log(notasM7);
+console.log();
+console.log();
