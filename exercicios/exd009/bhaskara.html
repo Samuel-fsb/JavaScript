@@ -14,16 +14,57 @@
             box-shadow: 123px black;
         }
 
+        h1.black{
+            color: black;
+        }
+
         button:hover{
             background-color: green;
+        }
+
+        h1, h2{
+            text-align: center;
+            color: white;
+        }
+        section#form{
+            height: 200px;
+            width: 400px;
+            border-radius: 8px;
+            background-color: rgba(41, 187, 236, 0.938);
+            box-shadow: 3px 3px 3px black;
+           
+        }
+
+        input#verde{
+            background-color: rgb(5, 244, 5);
+        }
+
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        input, label{
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <h1>Resolvendo Bhaskara</h1>
+    <h1 class="black">Resolvendo Bhaskara</h1>
     <button onclick="calcular()">Calcular</button>
     <section id="res">
         <p>Aqui vai aparecer o resultado do cáculo...</p>
+    </section>
+
+    <section id="form">
+        <h1>Sistema de Boas Vindas</h1>
+       <form action="" method="get">
+        <label for=""></label>
+        <input type="text" name="e" id="e">
+        <input type="submit" value="Enviar" id="verde">
+       </form>
+       <h2>Aguardando o seu nome...</h2>
     </section>
 
     <script>
@@ -51,6 +92,9 @@
             };
             return;
         };
+
+        
+    
     </script>
 </body>
 </html>
