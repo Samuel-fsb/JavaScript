@@ -13,6 +13,10 @@
             cursor: pointer;
             box-shadow: 123px black;
         }
+
+        button:hover{
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -23,17 +27,32 @@
     </section>
 
     <script>
+        
         function calcular(){
+            let resp = window.document.getElementById('res');
             let a = Number(window.prompt("Qual é o valor de A?"));
+            if (a == 0){
+                window.alert("Digite um valor positivo diferente de zero!");
+                return;
+            };
             let b = Number(window.prompt("Qual é o valor de B?"));
             let c = Number(window.prompt("Qual é o valor de C?"));
 
-            let delta
-            let bhaskara
+
+            let delta = b**2 - 4 * a * c;
+
+            if(delta < 0){
+                resp.innerHTML = `<p>Não é possível calcular a raiz quadrada de um número nagativo! Por favor, digite um número de um valor maior. </p>`
+            } else {
+                
+            let bhaskaraMenos = (- b - Math.sqrt(delta)) / (2 * a);
+            let bhaskaraMais = (- b + Math.sqrt(delta)) / (2 * a);
+            
+            resp.innerHTML = `<p> O resultado das duas raizes são ${bhaskaraMais} e ${bhaskaraMenos}</p> `;
+            };
+            return;
         };
 
-        let resp = window.document.getElementById('res');
-        resp.innerHTML = `<p>ededdededede<p/>`;
     </script>
 </body>
 </html>

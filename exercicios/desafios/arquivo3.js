@@ -8,17 +8,16 @@ const produtos = [
 const produtosMaisCem = produtos.filter(produto => produto.preco >= 100)
                                 .map(produto => `O ${produto.nome} custa ${produto.preco}`)
 
-console.log(produtosMaisCem);
-
-
 const SomaProdutos = produtos.filter(produto => produto.preco >= 100)
                                 .reduce((acumulador, atual) => {return acumulador + atual.preco}, 0)
+
+console.log(produtosMaisCem);
 
 console.log(`A soma de todos os protudos maiores ou iguais a cem reais é de: ${SomaProdutos}`);
 
 
 
-const produtosMaisCem = produtos.filter(produto => produto.preco >= 100)
+/*const produtosMaisCem = produtos.filter(produto => produto.preco >= 100)
                                 .reduce((acumulador, atual) => {return acumulador + atual.preco}, 0)
                                 .map(produto => `O ${produto.nome} custa ${produto.preco}`)
 
@@ -51,4 +50,4 @@ const convidadosVIP = convidados.forEach(nome => {
     };
 });
 
-console.log(convidadosVIP);
+console.log(convidadosVIP);*/
