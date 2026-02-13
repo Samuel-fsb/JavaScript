@@ -35,7 +35,7 @@
            
         }
 
-        input#verde{
+        input#MudarNome{
             background-color: rgb(5, 244, 5);
         }
 
@@ -59,15 +59,24 @@
 
     <section id="form">
         <h1>Sistema de Boas Vindas</h1>
-       <form action="" method="get">
-        <label for=""></label>
-        <input type="text" name="e" id="e">
-        <input type="submit" value="Enviar" id="verde">
-       </form>
+            <form action="" method="get">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                    <input type="submit" value="Enviar" id="MudarNome" onclick="ExecutarSaudação()">
+            </form>
        <h2>Aguardando o seu nome...</h2>
     </section>
 
+    
     <script>
+        function ExecutarSaudação(){
+            let verde = window.document.getElementById('MudarNome')
+            let NovoNome = window.document.getElementsById('nome')
+            verde.innerHTML = `<h2> É um prazer lhe conhecer ${NovoNome}! </h2>`
+
+        }
+
+
         function calcular(){
             let resp = window.document.getElementById('res');
             let a = Number(window.prompt("Qual é o valor de A?"));
@@ -93,8 +102,6 @@
             return;
         };
 
-        
-    
     </script>
 </body>
 </html>
