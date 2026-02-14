@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Tema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Garante que o body ocupe toda a altura */
+            margin: 0;
+            transition: background-color 0.5s, color 0.5s; /* Transição suave */
+        }
+
+        /* Tema Claro (Padrão) */
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* TEMA ESCURO - Estas classes serão adicionadas/removidas pelo JS */
+        body.dark-mode {
+            background-color: #222;
+            color: #f0f0f0;
+        }
+
+        .container.dark-mode {
+            background-color: #333;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        button.dark-mode {
+            background-color: #6c757d;
+        }
+
+        button.dark-mode:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao meu site!</h1>
+        <p>Este é um exemplo de página para alternar o tema.</p>
+        <button id="toggle-theme">Alternar Tema</button>
+    </div>
+
+    <script>
+        // SEU CÓDIGO JAVASCRIPT COMEÇA AQUI!
+
+        // 1. SELECIONAR OS ELEMENTOS:
+        //    - O botão de alternar tema (com id="toggle-theme")
+        //    - O <body> da página (para mudar o fundo e texto geral)
+        //    - O container (com class="container") para mudar seu fundo e sombra
+        
+        // 2. ADICIONAR UM OUVINTE DE EVENTOS (EVENT LISTENER) AO BOTÃO:
+        //    - Quando o botão for clicado, ele deve executar uma função.
+
+        // 3. DENTRO DA FUNÇÃO DO EVENTO:
+        //    - Use a propriedade .classList.toggle() para adicionar ou remover a classe "dark-mode"
+        //      em CADA um dos elementos que você selecionou (body, container e o próprio botão).
+        //    - A classe "dark-mode" já está definida no CSS para estilizar os elementos.
+        
+    </script>
+</body>
+</html>
