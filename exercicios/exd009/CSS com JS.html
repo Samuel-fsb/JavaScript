@@ -11,9 +11,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh; /* Garante que o body ocupe toda a altura */
+            min-height: 100vh; 
             margin: 0;
-            transition: background-color 0.5s, color 0.5s; /* Transição suave */
+            transition: background-color 0.5s, color 0.5s;
         }
 
         /* Tema Claro (Padrão) */
@@ -50,7 +50,7 @@
             background-color: #0056b3;
         }
 
-        /* TEMA ESCURO - Estas classes serão adicionadas/removidas pelo JS */
+        /* TEMA ESCURO */
         body.dark-mode {
             background-color: #222;
             color: #f0f0f0;
@@ -74,25 +74,17 @@
     <div class="container">
         <h1>Bem-vindo ao meu site!</h1>
         <p>Este é um exemplo de página para alternar o tema.</p>
-        <button id="toggle-theme">Alternar Tema</button>
+        <button id="toggle-theme" onclick="Tema()">Alternar Tema</button>
     </div>
 
     <script>
-        // SEU CÓDIGO JAVASCRIPT COMEÇA AQUI!
-
-        // 1. SELECIONAR OS ELEMENTOS:
-        //    - O botão de alternar tema (com id="toggle-theme")
-        //    - O <body> da página (para mudar o fundo e texto geral)
-        //    - O container (com class="container") para mudar seu fundo e sombra
-        
-        // 2. ADICIONAR UM OUVINTE DE EVENTOS (EVENT LISTENER) AO BOTÃO:
-        //    - Quando o botão for clicado, ele deve executar uma função.
-
-        // 3. DENTRO DA FUNÇÃO DO EVENTO:
-        //    - Use a propriedade .classList.toggle() para adicionar ou remover a classe "dark-mode"
-        //      em CADA um dos elementos que você selecionou (body, container e o próprio botão).
-        //    - A classe "dark-mode" já está definida no CSS para estilizar os elementos.
-        
+        function Tema(){
+            let BotaoSite = document.getElementById('toggle-theme');
+            
+            let Div = document.querySelector('.container');
+            
+            let site = document.getElementsByTagName('body')
+        };
     </script>
 </body>
 </html>
