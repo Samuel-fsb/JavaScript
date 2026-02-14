@@ -74,17 +74,30 @@
     <div class="container">
         <h1>Bem-vindo ao meu site!</h1>
         <p>Este é um exemplo de página para alternar o tema.</p>
-        <button id="toggle-theme" onclick="Tema()">Alternar Tema</button>
+        <button id="toggle-theme">Alternar Tema</button>
     </div>
 
     <script>
-        function Tema(){
-            let BotaoSite = document.getElementById('toggle-theme');
-            
-            let Div = document.querySelector('.container');
-            
-            let site = document.getElementsByTagName('body')
-        };
+        BotaoSite.addEventListener("click", {
+            BotaoSite.classList.toggle('dark-mode')
+        });
+
+        let BotaoSite = document.getElementById('toggle-theme');
+                
+        let Menu = document.querySelector('.container');
+                
+        let site = document.querySelector('body');
+               
+        
+    
+
+        // 2. ADICIONAR UM OUVINTE DE EVENTOS (EVENT LISTENER) AO BOTÃO:
+        //    - Quando o botão for clicado, ele deve executar uma função.
+
+        // 3. DENTRO DA FUNÇÃO DO EVENTO:
+        //    - Use a propriedade .classList.toggle() para adicionar ou remover a classe "dark-mode"
+        //      em CADA um dos elementos que você selecionou (body, container e o próprio botão).
+        //    - A classe "dark-mode" já está definida no CSS para estilizar os elementos.
     </script>
 </body>
 </html>
