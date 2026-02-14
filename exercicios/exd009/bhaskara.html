@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhaskara</title>
     <style>
+        body{
+            height: 100vh;
+        }
+
         button{
             padding: 20px;
             border-radius: 8px;
@@ -62,19 +66,28 @@
             <form action="" method="get">
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome">
-                    <input type="submit" value="Enviar" id="MudarNome" onclick="ExecutarSaudação()">
+                    <input type="button" value="Enviar" id="MudarNome" onclick="ExecutarSaudação()">
             </form>
-       <h2>Aguardando o seu nome...</h2>
+       <h2 id="mensagem">Aguardando o seu nome...</h2>
     </section>
 
     
     <script>
         function ExecutarSaudação(){
-            let verde = window.document.getElementById('MudarNome').valeu
-            let NovoNome = window.document.getElementsById('nome')
-            verde.innerText = `<h2> É um prazer lhe conhecer ${NovoNome}! </h2>`
+            let AreaMensagem = document.getElementById('mensagem');
 
-        }
+            let InputNome = document.getElementById('nome');
+
+            let NomeDigitado = InputNome.value;
+
+            if (NomeDigitado.length === 0){
+                window.alert('Digite um nome!');
+                return;
+            };
+
+            AreaMensagem.innerHTML= `<h2>É um prazer lhe conhecer ${NomeDigitado};!</h2>`
+
+        };
 
 
         function calcular(){
