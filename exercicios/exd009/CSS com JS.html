@@ -78,11 +78,12 @@
     </div>
 
     <script>
-        BotaoSite.addEventListener("click", {
-            BotaoSite.classList.toggle('dark-mode')
+        let BotaoSite = document.getElementById('toggle-theme');
+
+        BotaoSite.addEventListener('click', () => {
+            BotaoSite.classList.toggle('.dark-mode')
         });
 
-        let BotaoSite = document.getElementById('toggle-theme');
                 
         let Menu = document.querySelector('.container');
                 
