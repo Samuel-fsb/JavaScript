@@ -82,14 +82,21 @@
         
         let Menu = document.querySelector('.container');
                 
-        let site = document.querySelector('body');
+        let Site = document.querySelector('body');
 
         BotaoSite.addEventListener('click', () => {
             BotaoSite.classList.toggle ('dark-mode');
             Menu.classList.toggle ('dark-mode');
-            site.classList.toggle ('dark-mode');
+            Site.classList.toggle ('dark-mode');
         });
 
+        window.addEventListener('keydown', (event) => {
+            if(event.key === 'T' || event.key === 't'){
+                BotaoSite.classList.toggle ('dark-mode');
+                Menu.classList.toggle ('dark-mode');
+                Site.classList.toggle ('dark-mode');
+            };
+        });        
     </script>
 </body>
 </html>
