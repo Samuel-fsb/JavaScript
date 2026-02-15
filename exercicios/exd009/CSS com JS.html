@@ -79,26 +79,17 @@
 
     <script>
         let BotaoSite = document.getElementById('toggle-theme');
-
-        BotaoSite.addEventListener('click', () => {
-            BotaoSite.classList.toggle = ('.dark-mode')
-        });
-
-                
+        
         let Menu = document.querySelector('.container');
                 
         let site = document.querySelector('body');
-               
-        
-    
 
-        // 2. ADICIONAR UM OUVINTE DE EVENTOS (EVENT LISTENER) AO BOTÃO:
-        //    - Quando o botão for clicado, ele deve executar uma função.
+        BotaoSite.addEventListener('click', () => {
+            BotaoSite.classList.toggle ('dark-mode');
+            Menu.classList.toggle ('dark-mode');
+            site.classList.toggle ('dark-mode');
+        });
 
-        // 3. DENTRO DA FUNÇÃO DO EVENTO:
-        //    - Use a propriedade .classList.toggle() para adicionar ou remover a classe "dark-mode"
-        //      em CADA um dos elementos que você selecionou (body, container e o próprio botão).
-        //    - A classe "dark-mode" já está definida no CSS para estilizar os elementos.
     </script>
 </body>
 </html>
