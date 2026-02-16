@@ -43,13 +43,34 @@
 <body>
     <h1>Minhas Tarefas</h1>
     <div>
-        <main>
+        <main id="toDoList">
             <div>
-                <input type="text" name="" id="">
-                <button>Criar Tarefas</button>  
+                <input type="text" name="tarefas" id="CriarTarefas">
+                <button id="botao">Criar Tarefas</button>  
             </div>
-
+            <ul id="adicionarLista">
+               
+            </ul>
         </main>
     </div>
+
+    <script>
+        const botao = document.getElementById('batao');
+        const NovasTarefas = document.getElementById('Criartarefas')
+        const create = document.getElementById('adicionarLista');
+        const list = docmuent.getElementById('toDoList');
+
+        const NovoItem = document.createElement("li");
+        const nome = document.createTextNode("Water");
+
+
+
+        botao.addEventListener('click', () => {
+            create.createElemnt("li");
+            create.appendChild(document.createTextNode("NovasTarefas"));
+        });
+
+        
+    </script>
 </body>
 </html>
