@@ -41,36 +41,35 @@
     </style>
 </head>
 <body>
-    <h1>Minhas Tarefas</h1>
+    <h1>Do-To list</h1>
     <div>
         <main id="toDoList">
             <div>
-                <input type="text" name="tarefas" id="CriarTarefas">
+                <input type="text" id="criarTarefas" placeholder="Digite uma tarefa...">
                 <button id="botao">Criar Tarefas</button>  
             </div>
-            <ul id="adicionarLista">
+            <ul id="adicionarElementos">
                
             </ul>
         </main>
     </div>
 
     <script>
-        const botao = document.getElementById('batao');
-        const NovasTarefas = document.getElementById('Criartarefas')
-        const create = document.getElementById('adicionarLista');
-        const list = docmuent.getElementById('toDoList');
-
-        const NovoItem = document.createElement("li");
-        const nome = document.createTextNode("Water");
-
-
-
+        const botao = document.getElementById('botao');
+        const NovasTarefas = document.getElementById('criartarefas');
+        const ListaUL = document.getElementById('adicionarLista');
+        
+    
         botao.addEventListener('click', () => {
-            create.createElemnt("li");
-            create.appendChild(document.createTextNode("NovasTarefas"));
+            const tarefas = NovasTarefas.value;
+
+            NovoElemento.document.createElement("li");
+            NovasTarefas.document.createTextNode(NovasTarefas);
+
+            NovoElemento.appendChild(NovasTarefas);
+            create.appendChild(NovoElemento);
         });
 
-        
     </script>
 </body>
 </html>
