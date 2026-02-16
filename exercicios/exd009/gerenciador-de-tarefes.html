@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Terefas</title>
     <style>
+        body{
+            background-color: rgb(52, 52, 188);
+        } 
+
         h1{
             text-align: center;
+            color: white;
         }
+
         div{
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            
+        }
+        input{
+            border-radius: 8px;
+        }
+
+        input:hover{
+            box-shadow: 3px 3px 3px red;
+            transition: 0.3s;
         }
 
         main{
@@ -19,7 +35,9 @@
             width: 400px;
             box-shadow: 2px 2px 2px black;
             border-radius: 8px;
+            background-color: white;
         }
+
     </style>
 </head>
 <body>
@@ -28,13 +46,9 @@
         <main>
             <div>
                 <input type="text" name="" id="">
-                <button>Enviar</button>  
+                <button>Criar Tarefas</button>  
             </div>
 
-            <div>
-                <input type="text" name="" id="">
-                <button>Enviar</button>
-            </div>
         </main>
     </div>
 </body>
