@@ -45,10 +45,10 @@
     <div>
         <main id="toDoList">
             <div>
-                <input type="text" id="criarTarefas" placeholder="Digite uma tarefa...">
+                <input type="text" id="criartarefas" placeholder="Digite uma tarefa...">
                 <button id="botao">Criar Tarefas</button>  
             </div>
-            <ul id="adicionarElementos">
+            <ul id="adicionarLista">
                
             </ul>
         </main>
@@ -63,13 +63,24 @@
         botao.addEventListener('click', () => {
             const tarefas = NovasTarefas.value;
 
-            NovoElemento.document.createElement("li");
-            NovasTarefas.document.createTextNode(NovasTarefas);
+            if(tarefas.trim() === ""){
+                alert("Digite uma terafa primeiro!");
+                return;
+            };
 
-            NovoElemento.appendChild(NovasTarefas);
-            create.appendChild(NovoElemento);
+            const NovoElemento = document.createElement("li");
+
+            NovoElemento.textContent = tarefas;
+
+            NovoElemento.addEventListener('click', () => {
+                NovoElemento.remove();
+            });
+
+            ListaUL.appendChild(NovoElemento);
+
+            NovasTarefas.value = "";
+            NovasTarefas.focus();
         });
-
     </script>
 </body>
 </html>
