@@ -16,10 +16,29 @@
         }
 
         div{
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+        span{
+            color: white;
         }
 
         div.barra{
+            background-color: green;
+            color: white;
+        }
+
+        #fraca{
+
+        }
+
+        #amarela{
+
+        }
+
+        #forte{
 
         }
     </style>
@@ -27,9 +46,29 @@
 <body>
     <h1>Validação de Senha</h1>
     <div>
-        <div class="barra"></div>
-        <input type="password" name="d" id="d">
-        <span></span>
+        <div class="barra">sad</div>
+        <input type="password" id="senha">
+        <span id="resultado">Senha Forte</span>
     </div>
+
+    <script>
+        const InputPassword = document.getElementById('senha');
+        const Progresso = document.querySelector('.barra')
+        const ResultadoSenha = document.getElementById('resultado');
+
+        InputPassword.addEventListener('keyup', () => {
+
+            TamanhoSenha = InputPassword.value.length;
+
+            if(TamanhoSenha > 5){
+
+            } else if( TamanhoSenha > 10){
+
+            } else {
+                TamanhoSenha > 20
+            };
+        });
+
+    </script>
 </body>
 </html>
