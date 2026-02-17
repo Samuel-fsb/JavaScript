@@ -55,23 +55,27 @@
     </div>
 
     <script>
+        //Elementos selecionados via DOM.
         const botao = document.getElementById('botao');
         const NovasTarefas = document.getElementById('criartarefas');
         const ListaUL = document.getElementById('adicionarLista');
         
-    
+        //Criando um método que vai gerar novos itens de lista dentro da tag ul.
         botao.addEventListener('click', () => {
             const tarefas = NovasTarefas.value;
 
+            //Usando o if para verificar se o usuário não digitou nada. Se não digitar e apertar "enter", irá aparecer uma mensagem na tela.
             if(tarefas.trim() === ""){
                 alert("Digite uma terafa primeiro!");
                 return;
             };
 
+            //Criando um novo elemento de lista dentro de uma lista ordernada.
             const NovoElemento = document.createElement("li");
 
             NovoElemento.textContent = tarefas;
 
+            //Método para remover o novo elemento da lista.
             NovoElemento.addEventListener('click', () => {
                 NovoElemento.remove();
             });
