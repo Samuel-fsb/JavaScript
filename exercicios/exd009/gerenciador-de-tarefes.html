@@ -59,8 +59,8 @@
             list-style: none;
             background-color: white;
             padding: 15px;
-            text-align: center;
-            border-radius: 8px;
+            text-align: left;
+            border-radius: 50px 50px 50px 50px;
             margin-bottom: 10px;
         }
 
@@ -102,6 +102,16 @@
              const NovoElemento = document.createElement("li");
  
              NovoElemento.textContent = tarefas;
+             
+             const texto = document.createElement
+
+             const BotaoLimpar = document.createElement("button");
+             BotaoLimpar.textContent = "✔️"
+
+             const BotaoExcluir = document.createElement("button");
+             BotaoExcluir.textContent = "🗑️";
+
+             NovoElemento.append(BotaoLimpar, BotaoExcluir, );
  
              //Método para remover o novo elemento da lista.
              NovoElemento.addEventListener('click', () => {
