@@ -6,14 +6,23 @@
     <title>Gerenciador de Terefas</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
         body{
-            background-image: linear-gradient(to right, rgba(46, 43, 43, 0.389) 10%, black 100%);
+            background-image: linear-gradient(to right, rgb(52, 21, 227), rgb(14, 9, 50) 100%);
         } 
 
         h1{
             text-align: center;
             color: white;
             font-size: 80px;
+            margin-top: 70px;
         }
 
         div{
@@ -25,7 +34,7 @@
 
 
         input{
-            border-radius: 8px;
+            border-radius: 8px 0px 0px 8px;
             padding: 15px;
         }
 
@@ -34,16 +43,25 @@
             transition: 0.3s;
         }
 
-        main{
-            /*height: 500px;
-            width: 400px;
-            box-shadow: 2px 2px 2px black;
-            border-radius: 8px;
-            background-color: white;*/
+        button{
+            border-radius: 0px 8px 8px 0px;
+            padding: 17px;
+            background-color: black;
+            margin-left: -4px;
+            font-size: 14px;
+            color: white;
+            border: none;
         }
 
         li{
-            
+            color: black;
+            font-size: larger;
+            list-style: none;
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
     </style>
@@ -55,7 +73,7 @@
             <div>
                 <div id="flex">
                     <input type="text" id="criartarefas" placeholder="Digite uma tarefa...">
-                    <button id="botao">Criar Tarefas</button>
+                    <button id="botao">Adicionar Tarefa</button>
                 </div>
             </div>
             <ul id="adicionarLista">
