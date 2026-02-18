@@ -54,16 +54,37 @@
         }
 
         li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row-reverse;
             color: black;
             font-size: larger;
             list-style: none;
             background-color: white;
-            padding: 15px;
             text-align: left;
             border-radius: 50px 50px 50px 50px;
             margin-bottom: 10px;
         }
+        
+        li > button{
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            margin-left: 10px;
+            padding: 5px;
+        }
 
+        li > button:hover{
+            transform: scale(1.2s);
+            transition: 0.2s;
+        }
+
+        .feito{
+            text-decoration: line-through;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -100,10 +121,9 @@
  
              //Criando um novo elemento de lista dentro de uma lista ordernada.
              const NovoElemento = document.createElement("li");
- 
-             NovoElemento.textContent = tarefas;
-             
-             const texto = document.createElement
+            
+             const texto = document.createElement("span");
+             texto.textContent = tarefas;
 
              const BotaoLimpar = document.createElement("button");
              BotaoLimpar.textContent = "✔️"
@@ -111,11 +131,14 @@
              const BotaoExcluir = document.createElement("button");
              BotaoExcluir.textContent = "🗑️";
 
-             NovoElemento.append(BotaoLimpar, BotaoExcluir, );
- 
-             //Método para remover o novo elemento da lista.
-             NovoElemento.addEventListener('click', () => {
-                 NovoElemento.remove();
+             NovoElemento.append(BotaoLimpar, BotaoExcluir, texto);
+
+             BotaoLimpar.addEventListener('click', () => {
+                texto.classList.toggle('feito');
+             });
+
+             BotaoExcluir.addEventListener('click', () => {
+                NovoElemento.remove();
              });
  
              ListaUL.appendChild(NovoElemento);
