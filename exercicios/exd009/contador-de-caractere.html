@@ -64,18 +64,20 @@
             TamanhoSenha = InputPassword.value.length;
 
             if(TamanhoSenha <= 4){
-                ResultadoSenha.classList.toggle('fraca')
-                ResultadoSenha = "Senha Fraca";
+                ResultadoSenha.classList.add('fraca')
+                ResultadoSenha.textContent = "Senha Fraca";
                 InputPassword.style.backgroundColor = 'red'
                 Progresso.classList.toggle('fraca');
             } else if( TamanhoSenha >= 5 && TamanhoSenha <= 10){
-                 ResultadoSenha.classList.toggle('media');
-                 ResultadoSenha = "Senha Média";
+                 ResultadoSenha.classList.add('media');
+                 ResultadoSenha.classList.remove('fraca');
+                 ResultadoSenha.textContent = "Senha Média";
                  InputPassword.style.backgroundColor = 'yellow';
                  Progresso.classList.toggle('media');
             } else {
-                ResultadoSenha.classList.toggle('forte')
-                ResultadoSenha = "Senha Forte!";
+                ResultadoSenha.classList.add('forte');
+                ResultadoSenha.clssList.remove('fraca', 'media');
+                ResultadoSenha.textContent = "Senha Forte!";
                 InputPassword.style.backgroundColor = 'green';
                 Progresso.classList.toggle('forte');
             };
