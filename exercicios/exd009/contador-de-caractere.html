@@ -30,25 +30,28 @@
             color: white;
         }
 
-        #fraca{
-
+        .fraca{
+            background-color: red;
+            width: 30%;
         }
 
-        #amarela{
-
+        .media{
+            background-color: yellow;
+            width: 60%;
         }
 
-        #forte{
-
+        .forte{
+            background-color: green;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <h1>Validação de Senha</h1>
     <div>
-        <div class="barra">sad</div>
+        <div class="barra">Barra de progresso!</div>
         <input type="password" id="senha">
-        <span id="resultado">Senha Forte</span>
+        <span id="resultado"></span>
     </div>
 
     <script>
@@ -60,15 +63,23 @@
 
             TamanhoSenha = InputPassword.value.length;
 
-            if(TamanhoSenha > 5){
-
-            } else if( TamanhoSenha > 10){
-
+            if(TamanhoSenha <= 4){
+                ResultadoSenha.classList.toggle('fraca')
+                ResultadoSenha = "Senha Fraca";
+                InputPassword.style.backgroundColor = 'red'
+                Progresso.classList.toggle('fraca');
+            } else if( TamanhoSenha >= 5 && TamanhoSenha <= 10){
+                 ResultadoSenha.classList.toggle('media');
+                 ResultadoSenha = "Senha Média";
+                 InputPassword.style.backgroundColor = 'yellow';
+                 Progresso.classList.toggle('media');
             } else {
-                TamanhoSenha > 20
+                ResultadoSenha.classList.toggle('forte')
+                ResultadoSenha = "Senha Forte!";
+                InputPassword.style.backgroundColor = 'green';
+                Progresso.classList.toggle('forte');
             };
         });
-
     </script>
 </body>
 </html>
