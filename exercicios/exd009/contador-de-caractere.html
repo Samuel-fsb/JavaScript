@@ -26,7 +26,7 @@
         }
 
         div.barra{
-            background-color: green;
+            
             color: white;
         }
 
@@ -64,13 +64,14 @@
 
             TamanhoSenha = InputPassword.value.length;
 
-            //Reset total das classes em CSS.
+            //Reset total das classes do CSS.
             Progresso.classList.remove('fraca', 'media', 'forte');
             ResultadoSenha.classList.remove('fraca', 'media', 'forte');
 
-            //Verifição de senha em que o usurário não digitou nada.
+            //Verifição de senha em que o usurário não digitou nada e reset do CSS logo depois.
             if(TamanhoSenha === 0){
-                alert("Tamanho de senha inválido!");
+                ResultadoSenha.textContent = "";
+                InputPassword.style.backgroundColor = "";
                 return;
             };
 
@@ -80,20 +81,16 @@
                 ResultadoSenha.textContent = "Senha Fraca";
                 InputPassword.style.backgroundColor = 'red';
                 Progresso.classList.add('fraca');
-            } else if( TamanhoSenha >= 5 && TamanhoSenha <= 10){
+            } else if(TamanhoSenha >= 5 && TamanhoSenha <= 10){
                  ResultadoSenha.classList.add('media');
-                 ResultadoSenha.classList.remove('fraca');
                  ResultadoSenha.textContent = "Senha Média";
                  InputPassword.style.backgroundColor = 'yellow';
                  Progresso.classList.add('media');
-                 Progresso.classList.remove('fraca')
             } else {
                 ResultadoSenha.classList.add('forte');
-                ResultadoSenha.classList.remove('media');
                 ResultadoSenha.textContent = "Senha Forte!";
                 InputPassword.style.backgroundColor = 'green';
                 Progresso.classList.add('forte');
-                Progresso.classList.remove('media');
             };
         });
     </script>
