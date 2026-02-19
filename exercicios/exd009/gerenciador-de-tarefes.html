@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Terefas</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/ee7392967d.js" crossorigin="anonymous"></script>
     <style>
 
         *{
@@ -91,10 +92,32 @@
             padding-right: 10px;
             padding-left: 10px;
         }
+
+        p{
+            color: white;
+            text-align: center;
+            margin: 20px 0px -20px 0px;
+            font-size: 20px;
+        }
+
+        .modo-escuro{
+            background-image: linear-gradient(to left, black, black);
+            color: white;
+
+        }
+        #escuro{
+            border-radius: 50px 50px 50px 50px;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Lista de Tarefas</h1>
+
+    <p id="dt"></p>
+
+    <button id="escuro"><img src="" alt=""></button>
+
     <div>
         <main id="toDoList">
             <div>
@@ -111,9 +134,19 @@
 
     <script>
         //Elementos selecionados via DOM.
+         const Data = document.getElementById('dt');
          const botao = document.getElementById('botao');
          const NovasTarefas = document.getElementById('criartarefas');
          const ListaUL = document.getElementById('adicionarLista');
+
+         //Crianto a data e o horário da lista de tarefas.
+         /*const Data2 = () => {
+            return 
+         };
+         
+        function(){
+            Data = new Date().getFullYear.getMonth().getDay();
+        };*/
          
          //Criando um método que vai gerar novos itens de lista dentro da tag ul.
          botao.addEventListener('click', () => {
