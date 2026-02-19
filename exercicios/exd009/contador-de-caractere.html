@@ -55,6 +55,7 @@
     </div>
 
     <script>
+        //Selecionado os elementos através do DOM.
         const InputPassword = document.getElementById('senha');
         const Progresso = document.querySelector('.barra')
         const ResultadoSenha = document.getElementById('resultado');
@@ -63,27 +64,32 @@
 
             TamanhoSenha = InputPassword.value.length;
 
-            if(TamanhoSenha.trim() === ""){
-                alert("Tamanho de senha inválido!")
+            //Verifição de senha em que o usurário não digitou nada.
+            if(TamanhoSenha.trim() === "" && TamanhoSenha === 0){
+                alert("Tamanho de senha inválido!");
+                return;
             };
 
+            //Criando vericações do tamanhos de senhas.
             if(TamanhoSenha <= 4){
-                ResultadoSenha.classList.add('fraca')
+                ResultadoSenha.classList.add('fraca');
                 ResultadoSenha.textContent = "Senha Fraca";
-                InputPassword.style.backgroundColor = 'red'
-                Progresso.classList.toggle('fraca');
+                InputPassword.style.backgroundColor = 'red';
+                Progresso.classList.add('fraca');
             } else if( TamanhoSenha >= 5 && TamanhoSenha <= 10){
                  ResultadoSenha.classList.add('media');
                  ResultadoSenha.classList.remove('fraca');
                  ResultadoSenha.textContent = "Senha Média";
                  InputPassword.style.backgroundColor = 'yellow';
-                 Progresso.classList.toggle('media');
+                 Progresso.classList.add('media');
+                 Progresso.classList.remove('fraca')
             } else {
                 ResultadoSenha.classList.add('forte');
-                ResultadoSenha.clssList.remove('fraca', 'media');
+                ResultadoSenha.classList.remove('media');
                 ResultadoSenha.textContent = "Senha Forte!";
                 InputPassword.style.backgroundColor = 'green';
-                Progresso.classList.toggle('forte');
+                Progresso.classList.add('forte');
+                Progresso.classList.remove('media');
             };
         });
     </script>
