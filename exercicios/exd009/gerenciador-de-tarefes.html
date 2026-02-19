@@ -16,14 +16,28 @@
         }
 
         body{
-            background-image: linear-gradient(to right, rgb(52, 21, 227), rgb(14, 9, 50) 100%);
+            background-color: #f4f4f4;
+            color: #333;
+            transition: 0.3s ease;
+            /*background-image: linear-gradient(to right, rgb(52, 21, 227), rgb(14, 9, 50) 100%);*/
         } 
+
+        body.escuro{
+            background-color: #121212;
+            color: white;
+        }
+
+        body.azul{
+            background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
 
         h1{
             text-align: center;
-            color: white;
+            color: black;
             font-size: 80px;
             margin-top: 70px;
+            padding-top: 40px;
         }
 
         div{
@@ -94,10 +108,21 @@
         }
 
         p{
-            color: white;
+            color: black;
             text-align: center;
             margin: 20px 0px -20px 0px;
             font-size: 20px;
+        }
+
+        #menu{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            flex-flow: column;
+            margin-right: -20px;
+            margin-top: -20px;
         }
 
         .modo-escuro{
@@ -105,9 +130,27 @@
             color: white;
 
         }
-        #escuro{
+        .escuro{
             border-radius: 50px 50px 50px 50px;
-            padding: 20px;
+            padding: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .claro{
+            border-radius: 50px 50px 50px 50px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .azul{
+            border-radius: 50px 50px 50px 50px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        i{
+            font-size: 20px;
         }
     </style>
 </head>
@@ -116,7 +159,11 @@
 
     <p id="dt"></p>
 
-    <button id="escuro"><img src="" alt=""></button>
+    <div id="menu">
+            <button class="escuro"><i class="fa-regular fa-moon"></i></i></button>
+            <button class="claro"><i class="fa-regular fa-sun"></i></button>
+            <button class="azul"><i class="fa-solid fa-book-open"></i></button>
+    </div>
 
     <div>
         <main id="toDoList">
@@ -139,14 +186,43 @@
          const NovasTarefas = document.getElementById('criartarefas');
          const ListaUL = document.getElementById('adicionarLista');
 
+         const BotaoEscuro = document.querySelector('.escuro');
+         const BotaoClaro = document.querySelector('.claro');
+         const BotaoAzul = document.querySelector('.azul');
+         const corpo = document.body;
+
+         //Criando os botões para troca de tema.
+        BotaoEscuro.addEventListener('click', () => {
+            corpo.classList.remove('azul');
+            corpo.classList.add('escuro');
+        });
+        BotaoClaro.addEventListener('click', () => {
+            corpo.classList.remove('escuro', 'azul')
+        });
+        BotaoAzul.addEventListener('click', () => {
+            corpo.classList.remove('escuro');
+            corpo.classList.add('azul');
+        });
+
+
          //Crianto a data e o horário da lista de tarefas.
-         /*const Data2 = () => {
-            return 
+         function AtualizarData(){
+            const agora = new Date();
+            const opçoesData = {
+                DiaSemana: 'long',
+                Ano: 'numeric',
+                Mes: 'long',
+                Dia: 'numeric',
+                Hora: '2-digit',
+                Minuto: '2-digit'
+            };
+
+            //Formatando para o horário brasileiro.
+            document.getElementById('dt').innerHTML = agora.toLocaleString('pt-BR', opçoesData)
          };
-         
-        function(){
-            Data = new Date().getFullYear.getMonth().getDay();
-        };*/
+
+         AtualizarData();
+         setInterval(AtualizarData, 60000);
          
          //Criando um método que vai gerar novos itens de lista dentro da tag ul.
          botao.addEventListener('click', () => {
