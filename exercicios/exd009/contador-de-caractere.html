@@ -64,8 +64,12 @@
 
             TamanhoSenha = InputPassword.value.length;
 
+            //Reset total das classes em CSS.
+            Progresso.classList.remove('fraca', 'media', 'forte');
+            ResultadoSenha.classList.remove('fraca', 'media', 'forte');
+
             //Verifição de senha em que o usurário não digitou nada.
-            if(TamanhoSenha.trim() === "" && TamanhoSenha === 0){
+            if(TamanhoSenha === 0){
                 alert("Tamanho de senha inválido!");
                 return;
             };
