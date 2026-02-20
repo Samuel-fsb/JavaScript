@@ -5,43 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviando Formulários</title>
     <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            background-color: brown;
+        }
+
         h1{
             text-align: center;
+            font-size: 50px;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+        }
+
+        h2{
+            padding: 1px 0px 60px 0px;
+            font-weight: bolder;
+            font-size: 30px;
+            margin-top: -10px;
+        }
+
+        main{
+            height: 420px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            gap: 30px;
+            border-radius: 8px;
+            border: 2px solid black;
+            box-shadow: 2px 3px 3px black;
+           background-color: white;
+        }
+
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            gap: 5px;
+            margin-top: -70px;
+        }
+
+        input{
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        button{
+            background-color: rgba(1, 255, 1, 0.77);
+            color: white;
+            font-weight: bold;
+            padding: 10px 69px;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
         .erro{
-            background-color: red;
+            border-bottom: red;
+            color: black;
         }
 
         .sucesso{
             background-color: white;
             color: green;
         }
+
+        #fb{
+            font-size: 20px;
+            width: 190px;
+            height: 40px;
+            background-color: rgb(255, 141, 1);
+            border-radius: 8px;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <h1>Envio de Formularios</h1>
 
-    <form action="">
-        <input type="text" name="" id="InputN">
-        <input type="email" name="" id="InputE">
-        <input type="text" name="" id="SMS">
-        <button type="submit" class="Enviar">Enviar</button>
-    </form>
+    <main>
 
-    <div id="feedback">
-        O feedback vai aparecer aqui...
-    </div>
+        <h2>Faça o seu cadastro abaixo</h2>
+
+        <form action="">
+            <input type="text" name="" id="InputN" placeholder="Escreva o seu nome">
+            <input type="email" name="" id="InputE" placeholder="Escreva o seu email">
+            <input type="text" name="" id="SMS" placeholder="Escreva uma mensagem">
+            <button type="submit" class="Enviar">Enviar</button>
+        </form>
+        <div id="fb">
+            
+        </div>
+    </main>
 
     <script>
         const InputTexto = document.getElementById('InputN');
         const InputEmail = document.getElementById('InputE');
         const BotaoEnviar = document.querySelector('Enviar');
-        const Mensagem = document.getElementById('SMS')
+        const Mensagem = document.getElementById('SMS');
+        const feedback = document.getElementById('fb');
 
+        
+        //Reset de todas as classes da div de resultado.
+        feedback.classList.remove('erro', 'sucesso');
+        
         BotaoEnviar.addEventListener('summit', () => {
-
+            
+            Email = InputEmail.value.length;
+            
+            if(Email.includes('@') && Email >= 10){
+                feedback.classList.add('sucesso');
+                feedback.textContent = "Formulário enviado com sucesso!"
+            }else{
+                feedback.classList.add('erro');
+                feedback.textContent = "O seu formulário não pode ser enviado porque você não preencheu algum campo errado."
+            };
+            
         });
+
     </script>
 </body>
 </html>
