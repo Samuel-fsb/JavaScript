@@ -17,7 +17,7 @@
 
         body{
             background-color: #f4f4f4;
-            color: #333;
+            
             transition: 0.3s ease;
             /*background-image: linear-gradient(to right, rgb(52, 21, 227), rgb(14, 9, 50) 100%);*/
         } 
@@ -28,13 +28,20 @@
         }
 
         body.azul{
-            background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-image: linear-gradient(to right, rgb(52, 21, 227), rgb(14, 9, 50) 100%);
+            color: white;
+        }
+
+        h1.azul{
+            color: white;
+        }
+
+        p.azul{
             color: white;
         }
 
         h1{
             text-align: center;
-            color: black;
             font-size: 80px;
             margin-top: 70px;
             padding-top: 40px;
@@ -108,7 +115,6 @@
         }
 
         p{
-            color: black;
             text-align: center;
             margin: 20px 0px -20px 0px;
             font-size: 20px;
@@ -209,12 +215,12 @@
          function AtualizarData(){
             const agora = new Date();
             const opçoesData = {
-                DiaSemana: 'long',
-                Ano: 'numeric',
-                Mes: 'long',
-                Dia: 'numeric',
-                Hora: '2-digit',
-                Minuto: '2-digit'
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
             };
 
             //Formatando para o horário brasileiro.
