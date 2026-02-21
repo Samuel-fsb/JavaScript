@@ -86,27 +86,27 @@
     </style>
 </head>
 <body>
-    <h1>Envio de Formularios</h1>
+    <h1>Envio de Formulários</h1>
 
     <main>
 
         <h2>Faça o seu cadastro abaixo</h2>
 
-        <form action="">
+        <form action="" class="Enviar">
             <input type="text" name="" id="InputN" placeholder="Escreva o seu nome">
             <input type="email" name="" id="InputE" placeholder="Escreva o seu email">
             <input type="text" name="" id="SMS" placeholder="Escreva uma mensagem">
-            <button type="submit" class="Enviar">Enviar</button>
+            <button type="submit">Enviar</button>
         </form>
         <div id="fb">
             
         </div>
     </main>
-
+    
     <script>
         const InputTexto = document.getElementById('InputN');
         const InputEmail = document.getElementById('InputE');
-        const BotaoEnviar = document.querySelector('Enviar');
+        const BotaoEnviar = document.querySelector('.Enviar');
         const Mensagem = document.getElementById('SMS');
         const feedback = document.getElementById('fb');
 
@@ -114,7 +114,8 @@
         //Reset de todas as classes da div de resultado.
         feedback.classList.remove('erro', 'sucesso');
         
-        BotaoEnviar.addEventListener('summit', () => {
+        //Criando o botão para verificar a se o que o usuário digitou atende os requisitos.
+        BotaoEnviar.addEventListener('submit', () => {
             
             Email = InputEmail.value.length;
             
