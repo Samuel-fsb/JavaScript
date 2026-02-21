@@ -104,20 +104,20 @@
     </main>
     
     <script>
-        const InputTexto = document.getElementById('InputN');
+        const InputNome = document.getElementById('InputN');
         const InputEmail = document.getElementById('InputE');
         const BotaoEnviar = document.querySelector('.Enviar');
         const Mensagem = document.getElementById('SMS');
         const feedback = document.getElementById('fb');
-
-        
-        //Reset de todas as classes da div de resultado.
-        feedback.classList.remove('erro', 'sucesso');
         
         //Criando o botão para verificar a se o que o usuário digitou atende os requisitos.
-        BotaoEnviar.addEventListener('submit', () => {
+        BotaoEnviar.addEventListener('submit', (parar) => {
+            parar.preventDefault();
             
-            Email = InputEmail.value.length;
+            //Reset de todas as classes da div de resultado.
+            feedback.classList.remove('erro', 'sucesso');
+
+            Email = InputEmail.value;
             
             if(Email.includes('@') && Email >= 10){
                 feedback.classList.add('sucesso');
@@ -126,9 +126,13 @@
                 feedback.classList.add('erro');
                 feedback.textContent = "O seu formulário não pode ser enviado porque você não preencheu algum campo errado."
             };
-            
         });
 
+        InputNome.value = "";
+        InputEmail.value = "";
+        Mensagem.value = "";
+
+        InputNome.focus();
     </script>
 </body>
 </html>
