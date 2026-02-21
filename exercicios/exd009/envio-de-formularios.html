@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviando Formulários</title>
     <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
         body{
             display: flex;
             justify-content: center;
@@ -23,8 +28,10 @@
         h2{
             padding: 1px 0px 60px 0px;
             font-weight: bolder;
-            font-size: 30px;
+            font-size: 25px;
             margin-top: -10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         main{
@@ -66,22 +73,19 @@
         }
 
         .erro{
-            border-bottom: red;
-            color: black;
+            background-color: red;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 20px;
         }
 
         .sucesso{
-            background-color: white;
-            color: green;
-        }
-
-        #fb{
-            font-size: 20px;
-            width: 190px;
-            height: 40px;
-            background-color: rgb(255, 141, 1);
-            border-radius: 8px;
+            background-color: rgb(6, 247, 6);
             color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 25px;
         }
     </style>
 </head>
@@ -119,8 +123,13 @@
 
             Email = InputEmail.value;
             MensagemEscrita = Mensagem.value.length;
+            NomeEscrito = InputNome.value;
             
             if(Email.includes('@') && MensagemEscrita >= 10){
+                if(NomeEscrito.trim() === ""){
+                    
+                    return;
+                };
                 feedback.classList.add('sucesso');
                 feedback.textContent = "Formulário enviado com sucesso!"
 
@@ -128,14 +137,16 @@
                 InputNome.value = "";
                 InputEmail.value = "";
                 Mensagem.value = "";
-                feedback.value = "";
             }else{
                 feedback.classList.add('erro');
-                feedback.textContent = "O seu formulário não pode ser enviado porque você não preencheu algum campo errado."
-
+                feedback.textContent = "Ainda falta preencher algum campo do formulário!"
             };
 
-    
+            //A mensagem irá aparecer na tela por 3 segundo e depois sumir. Além disso, o cursor voltará automaticamente para o campo de nome.
+            setTimeout(() => {
+                feedback.textContent = "";
+                feedback.classList.remove('sucesso', 'erro');
+            }, 3000);
             InputNome.focus();
         });
     </script>
