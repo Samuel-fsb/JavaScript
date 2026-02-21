@@ -118,21 +118,26 @@
             feedback.classList.remove('erro', 'sucesso');
 
             Email = InputEmail.value;
+            MensagemEscrita = Mensagem.value.length;
             
-            if(Email.includes('@') && Email >= 10){
+            if(Email.includes('@') && MensagemEscrita >= 10){
                 feedback.classList.add('sucesso');
                 feedback.textContent = "Formulário enviado com sucesso!"
+
+                //Para limpar os campos de input assim que o formulário for enviado e fazer com que o cursor volte para o input de nome.
+                InputNome.value = "";
+                InputEmail.value = "";
+                Mensagem.value = "";
+                feedback.value = "";
             }else{
                 feedback.classList.add('erro');
                 feedback.textContent = "O seu formulário não pode ser enviado porque você não preencheu algum campo errado."
+
             };
+
+    
+            InputNome.focus();
         });
-
-        InputNome.value = "";
-        InputEmail.value = "";
-        Mensagem.value = "";
-
-        InputNome.focus();
     </script>
 </body>
 </html>
