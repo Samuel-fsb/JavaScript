@@ -96,25 +96,29 @@
 
         <h2>Faça o seu cadastro abaixo</h2>
 
+        <!-- Criando o formulrio com três seções e um botão do tipo submit -->
         <form action="" class="Enviar">
             <input type="text" name="" id="InputN" placeholder="Escreva o seu nome">
             <input type="email" name="" id="InputE" placeholder="Escreva o seu email">
             <input type="text" name="" id="SMS" placeholder="Escreva uma mensagem">
             <button type="submit">Enviar</button>
         </form>
-        <div id="fb">
+
+        <!-- Nessa div irá aparecer o resultado das mensagens após o envio do formulário -->
+        <div class="fb">
             
         </div>
     </main>
     
     <script>
+        //Selecionando os elementos através do DOM.
         const InputNome = document.getElementById('InputN');
         const InputEmail = document.getElementById('InputE');
         const BotaoEnviar = document.querySelector('.Enviar');
         const Mensagem = document.getElementById('SMS');
-        const feedback = document.getElementById('fb');
+        const feedback = document.querySelector('.fb');
         
-        //Criando o botão para verificar a se o que o usuário digitou atende os requisitos.
+        //Criando um botão para verificar se o que foi usuário digitou atende os requisitos.
         BotaoEnviar.addEventListener('submit', (parar) => {
             parar.preventDefault();
             
@@ -125,15 +129,12 @@
             MensagemEscrita = Mensagem.value.length;
             NomeEscrito = InputNome.value;
             
-            if(Email.includes('@') && MensagemEscrita >= 10){
-                if(NomeEscrito.trim() === ""){
-                    
-                    return;
-                };
+            if(Email.includes('@') && MensagemEscrita >= 10 && NomeEscrito.trim() !== ""){
+                
                 feedback.classList.add('sucesso');
                 feedback.textContent = "Formulário enviado com sucesso!"
 
-                //Para limpar os campos de input assim que o formulário for enviado e fazer com que o cursor volte para o input de nome.
+                //Para limpar os campos de input assim que o formulário for enviado.
                 InputNome.value = "";
                 InputEmail.value = "";
                 Mensagem.value = "";
