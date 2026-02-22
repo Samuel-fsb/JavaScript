@@ -6,7 +6,8 @@
     <title>Contador de Caracteres</title>
     <style>
         body{
-            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.792), rgba(19, 75, 243, 0.807));
+            background-image: linear-gradient(to bottom, black 50%, white);
+            min-height: 100vh;
         }
 
         h1{
@@ -15,19 +16,35 @@
             color: white;
         }
 
-        div{
+        div#conteiner{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-flow: column;
+            gap: 20px;
         }
         span{
             color: white;
         }
 
         div.barra{
-            
+            font-size: 20px;
             color: white;
+            border-radius: 8px;
+           padding: 12px;
+        }
+
+        input{
+            padding: 15px;
+            
+        }
+
+        span{
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            color: black;
+            font-size: 20px;
         }
 
         .fraca{
@@ -48,8 +65,8 @@
 </head>
 <body>
     <h1>Validação de Senha</h1>
-    <div>
-        <div class="barra">Barra de progresso!</div>
+    <div id="conteiner">
+        <div class="barra"></div>
         <input type="password" id="senha" placeholder="Digite a sua senha...">
         <span id="resultado"></span>
     </div>
