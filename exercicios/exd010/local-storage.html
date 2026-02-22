@@ -13,13 +13,27 @@
             text-align: center;
             color: white;
             font-size: 40px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 30px 0px 30px 0px;
+        }
+
+        #conteiner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         main{
-            height: 200px;
+            height: 500px;
             width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            gap: 10px;
             border-radius: 8px;
+            background-color: white;
+            box-shadow: 2px 2px 2px black;
 
         }
     </style>
@@ -27,8 +41,12 @@
 <body>
     <h1>Faça o seu cadastro abaixo</h1>
 
-    <main>
-        
-    </main>
+    <div id="conteiner">
+        <main>
+            <input type="text" name="" id="">
+            <input type="email" name="" id="">
+            <button type="submit">Fazer login</button>
+        </main>
+    </div>
 </body>
 </html>
