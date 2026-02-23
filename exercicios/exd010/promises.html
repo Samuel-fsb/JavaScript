@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="PT_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    
+<script>
+    const MyPromise = new Promise((resolve, reject) =>{
+
+    const nome = "Matheus";
+
+    if(nome === "Matheus"){
+        resolve('Usuário Matheus encontrado!');
+    } else{
+        reject('O usuário Mathues não foi encontrado.');
+        //O reject vai mandar uma mensagem de erro para o console.
+    };
+});
+
+//Para ver o resultado desse método use o Then. Ele também é usado para executar a promessa.
+MyPromise.then((data)=> {
+    console.log(data);
+});
+
+    const MyPromise2 = new Promise((resolve, reject) => {
+
+    const nome = "Matheus";
+
+    if(nome === "Matheus"){
+        resolve('Usuário Matheus encontrado!');
+    } else{
+        reject('O usuário Mathues não foi encontrado.');
+    };
+
+    MyPromise2
+    .then((data) => {
+        return data.toLowerCase()
+    })
+    .then((stringModificada) => {
+        console.log(stringModificada);
+    });
+});
+
+
+//Para tratar o erro gerado pelo reject use o catch. Com o retorno do catch você pode fazer alguma lógica com o seu sistema.
+//Geralmente estar usando o catch e then em conjunto papra processar sucessos e dar um fim bom para os erros do nosso programa.
+const MyPromise3 = new Promise((resolve, reject) => {
+
+    const nome = "João";
+
+    if(nome === "Matheus"){
+        resolve('Usuário Matheus encontrado!');
+    } else{
+        reject('O usuário Mathues não foi encontrado.');
+    };
+
+    MyPromise3
+    .then((data) => {
+        return data.toLowerCase()
+    })
+    .then((stringModificada) => {
+        console.log(stringModificada);
+    }).catch((err) => {
+        console.log('Aconteceu um erro: ' + err)
+    });
+});
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
