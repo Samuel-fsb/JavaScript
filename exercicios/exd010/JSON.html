@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    
+    <script>
+        [{
+            "time": "Corinthians",
+            "estadio": { //Um obejeto dentro do JSON.
+                "nome":"Neo Quimica Arena",
+                "publico_reecorde": 345678,
+                "capacidade": null
+            },
+            "jogadores": [{ //exemplo de array dentro o JSON.
+                "nome": "Cássio",
+                "idade": 33,
+                "titular": true, //Dentro do Json você consegue especificar valores boleanos como falso e true.
+                "times": ["Grêmio", "PSV", "Corinthias"]
+            },{
+                "nome": "Luan",
+                "idade": 27,
+                "titular": false, 
+                "times": ["Grêmio", "Corinthias"]
+            }]
+        }]
+    </script>
+</body>
+</html>
