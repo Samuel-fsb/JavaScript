@@ -114,8 +114,27 @@ const p4 = new Promise((resolve, reject) => {
     });
 });
 
-//
+//Fetch request na API do GitHub.
+//Fetch API
 
+const UserName = 'samuelbezerra';
+
+fetch(`https://api.github.com/users/${UserName}`,{
+    method: 'GET',
+    headers:{
+        Accept: 'application/vnd.github.v3+json',
+    },
+}).then((response) => {
+    console.log(typeof response);
+    console.log(response);//Usando esses dois métodos para mostrar a resposta, eles ficaram tudo junto, e é por isso que usamos o JSON para organizar eles melhor.
+    return response.json()
+}).then((data) => {
+    console.log(`O nome do usuário é: ${data.name}`);
+})
+ .catch((err) => {
+    console.log(`Houve algum erro: ${err}`)   
+ });
+//O método fecth vai retonar uma promessa e é por isso que você usa o then para gerar a resposta.
 
 </script>
 </body>
