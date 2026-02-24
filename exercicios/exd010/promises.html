@@ -46,7 +46,7 @@ MyPromise.then((data)=> {
 
 
 //Para tratar o erro gerado pelo reject use o catch. Com o retorno do catch você pode fazer alguma lógica com o seu sistema.
-//Geralmente estar usando o catch e then em conjunto papra processar sucessos e dar um fim bom para os erros do nosso programa.
+//Geralmente estar usando o catch e then em conjunto para processar sucessos e dar um fim bom para os erros do nosso programa.
 const MyPromise3 = new Promise((resolve, reject) => {
 
     const nome = "João";
@@ -63,17 +63,58 @@ const MyPromise3 = new Promise((resolve, reject) => {
     })
     .then((stringModificada) => {
         console.log(stringModificada);
-    }).catch((err) => {
+    })
+    .catch((err) => {
         console.log('Aconteceu um erro: ' + err)
     });
 });
 
+//Você pode resolver várias promessas de uma única vez.
+//Use o método all para isso. Ele resolve elas dentro de um array.
+const p1 = new Promise((resolve, reject) => {
+    setTimeout(() =>{ //
+        resolve('P1 ok! TimeOut!')
+    }, 2000);
+});
 
+//As promises de baixo só serão resolvidas depois da de cima.
+//O método all prega que todas as promessas tem que ser resolvidas para que ele seja executado. Ele recebe o array de promessas e ser retona quando todas estiverem resolvidas.
+const p2 = new Promise((resolve, reject) => {
+    resolve("P2 ok!");
+});
 
+const p3 = new Promise((resolve, reject) => {
+    resolve("P3 ok!");
+});
 
+const resolveAll = Promise.all([p1, p2, p3]).then((data) => {
+    console.log(data);
+});
 
+//O JavaScript vai resolver primeiro a linha de baixo porque ele acha que as linhas de promoses irão demorar.
+console.log('Depois do All!( )')
 
+//Várias promessas com race. Ele vai receber um array de promessas e só vai retornar a primeira promessa resolvida.
+//A primeira promessa resolvida madará uma mensagem de retorno.
+const p4 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('P4 ok!');
+    }, 2000);
 
+    const p5 = new Promise((resolve, reject) => {
+        resolve('P5 ok!');
+    });//Essa vai ser retornada primeiro.
+
+    const p6 = new Promise((resolve, reject) => {
+        resolve('P6 ok');
+    });
+
+    const resolveAllRace = Promise.race([p4, p5, p6]).then((data) => {
+        console.log(data);
+    });
+});
+
+//
 
 
 </script>
