@@ -36,7 +36,7 @@
         [{
             "nome": "Scarface",
             "lancamento": 1984,
-            "categoria": ["Drama", "Supense", "Acao"]
+            "categoria": ["Drama", "Supense", "Acao"],
             "atores": [{ //Aqui conseguimos colocar o valor de um objeto dentro de uma chave. Você pode criar uma lista de objetos dentro de uma chave.
                 "nome": "Al Pacino",
                 "personagem": "Tony Montana"
@@ -47,6 +47,32 @@
             }]
         } ]
 
+        //Sintaxe do Async a Await.
+
+        function PrimeiraFuncao(){
+
+            return new Promise((resolve) => {
+
+                setTimeout(() => {
+                    console.log("Esperou isso aqui");
+                    resolve();
+                }, 2000);
+
+            });
+        };
+
+        async function SegundaFuncao() {
+            console.log('Iniciou!');
+
+            await PrimeiraFuncao();
+
+            console.log('Terminou!');
+        }
+
+        SegundaFuncao()
+
+
+        
     </script>
 </body>
 </html>
