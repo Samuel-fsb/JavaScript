@@ -8,7 +8,8 @@
 <body>
     
     <script>
-        [{
+        /*
+        let json = `[{
             "time": "Corinthians",
             "estadio": { //Um obejeto dentro do JSON.
                 "nome":"Neo Quimica Arena",
@@ -26,7 +27,26 @@
                 "titular": false, 
                 "times": ["Grêmio", "Corinthias"]
             }]
-        }]
+        }]`
+
+        let times = JSON.parse(json);
+        console.log(times[0].jogadores[1].times);
+        */
+
+        [{
+            "nome": "Scarface",
+            "lancamento": 1984,
+            "categoria": ["Drama", "Supense", "Acao"]
+            "atores": [{ //Aqui conseguimos colocar o valor de um objeto dentro de uma chave. Você pode criar uma lista de objetos dentro de uma chave.
+                "nome": "Al Pacino",
+                "personagem": "Tony Montana"
+            },
+            {
+                "nome": "Steven Bauer",
+                "personagem": "Manny Ribera"
+            }]
+        } ]
+
     </script>
 </body>
 </html>
