@@ -49,7 +49,7 @@
 
         //Sintaxe do Async a Await.
 
-        function PrimeiraFuncao(){
+        /*function PrimeiraFuncao(){
 
             return new Promise((resolve) => {
 
@@ -69,10 +69,28 @@
             console.log('Terminou!');
         }
 
-        SegundaFuncao()
+        SegundaFuncao()*/
 
+        function GetUser(id){
 
+            
+            return fetch(`https://reqres.in/api/users?id=${id}`)
+            .then(data => data.json()) //O método fecth retorna uma promise e é por isso que você deve usar then para iniciar essa função.
+            .catch(err => console.log(err))
+        };
         
+        async function ShowUserName(id){
+            try{
+                const user = await GetUser(id);//chamamos a primeira função, mas ela será vai esperar
+    
+                console.log(`O nome do usuário é: ${usar.data.first_name}`)
+    
+            } catch (err){
+                console.log(`Erro: ${err}`)
+            }
+        };
+        
+        ShowUserName(3)
     </script>
 </body>
 </html>
