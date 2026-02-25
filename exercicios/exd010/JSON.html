@@ -124,13 +124,37 @@
             console.log(usersData)
         });
 
-        */
-
+        
         const FazerPedido = new Promise((resolve, reject) => {
             return reject('Não aceito!')
         });
-
+        
         console.log(FazerPedido);
-    </script>
+        */
+
+        function buscarDadosDoServidor() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                resolve({ nome: "Carlos", pontuacao: 850 });
+                }, 2000);
+            });
+        }
+
+        async function SalvarDados(){
+            const usuario = await BuscarDadosDoServidor()
+            
+            const SalvandoUsuario = JSON.stringify(usuario)
+            
+            console.log(SalvandoUsuario)
+        };
+
+        localStorage.setItem('dados de perfil')
+
+        const DadosAntigos = JSON.parse(localstorege.removeItem('dados de perfil'));
+
+        console.log(DadosAntigos.nome)
+
+        
+        </script>
 </body>
 </html>
