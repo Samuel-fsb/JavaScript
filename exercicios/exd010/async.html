@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async / Await</title>
+</head>
+<body>
+    
+    <script>
+        function esperar(ms){
+            return new Promise(resolve => setTimeout(resolve, ms));
+        };
+
+        const alarme = async ms => {
+            console.log('Iniciando contagem!');
+            const esperar = await esperar(3000)
+            
+            console.log("BEEP BEEP! O tempo acabou!");
+        };
+        
+        console.log(ms)
+
+    </script>
+</body>
+</html>
