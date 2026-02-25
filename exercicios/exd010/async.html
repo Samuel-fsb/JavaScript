@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async / Await</title>
+    <title>Async/Await</title>
 </head>
 <body>
     
@@ -14,12 +14,28 @@
 
         const alarme = async ms => {
             console.log('Iniciando contagem!');
-            const esperar = await esperar(3000)
+            const FimDaContagem = await esperar(3000)
             
             console.log("BEEP BEEP! O tempo acabou!");
         };
         
-        console.log(ms)
+        console.log(esperar)
+
+
+        function BuscaPreco(b){
+            return new Promise(resolve => {
+
+                setTimeout(() => { resolve(250) }, 1500);
+            });
+        };
+
+        const CalcularTotal = async b => {
+            const PrecoRetornado = await BuscaPreco(b);
+            const Desconto = PrecoRetornado - 50;
+
+            console.log(`O preço final com desconto é ${Desconto}`);
+        };
+      
 
     </script>
 </body>
