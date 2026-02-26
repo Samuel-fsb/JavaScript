@@ -57,7 +57,7 @@
             return new Promise(resolve => {const disponivel = (item === "celular");
                 setTimeout(() => resolve(disponivel), 2000);
             });
-        };2
+        };
 
         const TentarComprar = async (Produto) => {
             const Compra = await VerificarEstoque(Produto);
@@ -70,6 +70,22 @@
         }
 
         console.log(TentarComprar("celular"));
+
+
+        localStorage.setItem("carro", "BMW");
+        console.log(localStorage.getItem("carro"));
+        localStorage.removeItem("carro");
+
+        let Marcas = ['Gibson', 'Fender', 'LTD'];
+        localStorage.setItem("Guitarras", Marcas); //Nós demos um nome da chave para o array que criamos para que ele possa ser guardado.
+
+        console.log(localStorage.getItem("Guitarras"));
+        /*localStorage.removeItem("Guitarras");*/
+
+        marcas.push("Ibanez");
+
+
+
 
 
     </script>
