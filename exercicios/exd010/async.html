@@ -8,6 +8,7 @@
 <body>
     
     <script>
+        /*
         function esperar(ms){
             return new Promise(resolve => setTimeout(resolve, ms));
         };
@@ -35,7 +36,36 @@
 
             console.log(`O preço final com desconto é ${Desconto}`);
         };
-      
+        
+        async function saudar(nome){
+            await esperar(5000)
+            console.log(`Olá, ${nome}`);
+        };
+        
+        saudar("Carlos")
+        */
+
+    
+
+       
+
+
+
+        const processarpedido = async (comidas) => {
+            const id = await Buscar(comidas);
+            const preco = await BuscarPreco(id);
+
+            console.log(`O produto ${id} custa ${preco}`);
+        };
+
+
+         processarpedido("Hamburguer");
+
+
+
+
+
+
 
     </script>
 </body>
