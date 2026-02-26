@@ -43,28 +43,35 @@
         };
         
         saudar("Carlos")
-        */
-
-    
-
-       
-
-
-
         const processarpedido = async (comidas) => {
             const id = await Buscar(comidas);
             const preco = await BuscarPreco(id);
-
+            
             console.log(`O produto ${id} custa ${preco}`);
         };
+        
+        processarpedido("Hamburguer");
+        */
 
+        function VerificarEstoque(item){
+            return new Promise(resolve => {
 
-         processarpedido("Hamburguer");
+                const disponivel = (item === "celular");
+                setTimeout(() => resolve(disponivel), 2000);
+            });
+        };
 
+        const TentarComprar = async (Produto) => {
+            const Compra = await VerificarEstoque(item);
 
+            if(VerificarEstoque === true){
+                console.log("Esse produto ainda está no estoque");
+            }else{
+                console.log("Infelizmente, esse produto acabou!");
+            };
+        }
 
-
-
+        console.log(VerificarEstoque("celular"));
 
 
     </script>
