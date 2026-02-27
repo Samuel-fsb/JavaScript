@@ -119,13 +119,21 @@
 
         function TorrarPao(){
             return new Promise(resolve => {
-                conosle.log("Iniciando: Torrar pão...");
+                console.log("Iniciando: Torrar pão...");
                 setTimeout(() => resolve ("Torrada crocante! 🍞"), 2000)
             });
         };
 
-        
+        const PrepararCafeDaManha = async () => {
+            const PromesaAgua = EsquentarAgua();
+            const PromessaPao = TorrarPao();
 
+            const ResultadoAgua = await PromesaAgua;
+            const ResultadoPao = await PromessaPao;
+
+            console.log(`Café da manhã pronto: ${ResultadoAgua} e ${ResultadoPao}`);
+        };
+        
 
 
 
