@@ -138,7 +138,11 @@
 
         const BuscarDados = async (id) => {
            const DadosUsuario = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`); // Usei as aspas para colocar colocar o parâmentro, para que assim, ele possa buscar qualquer usuário.
-           const Usuario = await DadosUsuario.JSON(); //Usei o método .JSON()para tranformar esse dado da API em um documento JSON().
+           const Usuario = await DadosUsuario.json(); //Usei o método .json()para tranformar esse dado da API em um documento json().
+
+           //a variável Usuario agora guarda um objeto com os dados da pessoa. Dentro desse objeto, a API nos entrega uma propriedade chamada name (o nome do usuário, acessível via Usuario.name).
+
+           localStorage.setItem("NomeUsuário", Usuario.name);
         };
         console.log(BuscarDados(5))
 
