@@ -108,8 +108,8 @@
             };
         };
 
-        console.log(ExibirClima(API));*/
-
+        console.log(ExibirClima(API));
+        
         function EsquentarAgua(){
             return new Promise(resolve => {
                 console.log("Iniciando a esquentar água...");
@@ -134,6 +134,14 @@
             console.log(`Café da manhã pronto: ${ResultadoAgua} e ${ResultadoPao}`);
         };
         
+        */
+
+        const BuscarDados = async (id) => {
+           const DadosUsuario = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`); // Usei as aspas para colocar colocar o parâmentro, para que assim, ele possa buscar qualquer usuário.
+           const Usuario = await DadosUsuario.JSON(); //Usei o método .JSON()para tranformar esse dado da API em um documento JSON().
+        };
+        console.log(BuscarDados(5))
+
 
 
 
