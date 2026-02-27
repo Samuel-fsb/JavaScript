@@ -93,13 +93,22 @@
                     if(Sucesso){
                         resolve("25° e ensolarado ☀️")
                     } else{
-                        resolve("ERRO! O servidor de clima caiu ⛈️")
+                        reject("ERRO! O servidor de clima caiu ⛈️")
                     }
                 }, 2000);
             });
         };
 
+        const ExibirClima = async (API) => {
+            try {
+                const DadosClima = await BuscarClima(API);
+                console.log(`Os dados do clima são: ${DadosClima}`);
+            } catch (error) {
+                console.log(`Infelizmente ocorreu um erro ao buscar os dados ${error}` );
+            };
+        };
 
+        console.log(ExibirClima(APIClima));
 
     </script>
 </body>
