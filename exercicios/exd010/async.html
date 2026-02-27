@@ -51,7 +51,7 @@
         };
         
         processarpedido("Hamburguer");
-        */
+        
 
         function VerificarEstoque(item){
             return new Promise(resolve => {const disponivel = (item === "celular");
@@ -80,7 +80,7 @@
         localStorage.setItem("Guitarras", Marcas); //Nós demos um nome da chave para o array que criamos para que ele possa ser guardado.
 
         console.log(localStorage.getItem("Guitarras"));
-        /*localStorage.removeItem("Guitarras");*/
+        localStorage.removeItem("Guitarras");
 
         Marcas.push("Ibanez");
         localStorage.setItem("Guitarras", Marcas);
@@ -108,7 +108,34 @@
             };
         };
 
-        console.log(ExibirClima(APIClima));
+        console.log(ExibirClima(API));*/
+
+        function EsquentarAgua(){
+            return new Promise(resolve => {
+                console.log("Iniciando a esquentar água...");
+                setTimeout(() => resolve ("água quente!☕"), 2000);
+            });
+        };      
+
+        function TorrarPao(){
+            return new Promise(resolve => {
+                conosle.log("Iniciando: Torrar pão...");
+                setTimeout(() => resolve ("Torrada crocante! 🍞"), 2000)
+            });
+        };
+
+        
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
