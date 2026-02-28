@@ -141,19 +141,24 @@
            const Usuario = await DadosUsuario.json(); //Usei o método .json()para tranformar esse dado da API em um documento json().
 
            //a variável Usuario agora guarda um objeto com os dados da pessoa. Dentro desse objeto, a API nos entrega uma propriedade chamada name (o nome do usuário, acessível via Usuario.name).
-
-           localStorage.setItem("NomeUsuário", Usuario.name);
-
-           const NomeSalvo = localStorage.getItem("NomeUsuário");
-
-           if(NomeSalvo){
-
-           }else{
-            
-           };
-           
+           return Usuario.name;
         };
-        console.log(BuscarDados(5))
+
+        const SalvarDados = async () => {
+            
+            const NomeSalvo = localStorage.getItem("NomeUsuário");
+ 
+            if(NomeSalvo){
+                console.log(`Bem vindo de volta ${NomeSalvo}!`);
+            }else{
+                console.log("Usuário não encontrado! Buscando na API..");
+
+                localStorage.setItem("NomeUsuario", Usuario.name);
+            };
+
+        };
+
+        SalvarDados(8);
 
 
 
