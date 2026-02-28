@@ -152,9 +152,17 @@
                 console.log(`Bem vindo de volta ${NomeSalvo}!`);
             }else{
                 console.log("Usuário não encontrado! Buscando na API..");
-                const SalvarNome = await BuscarDados(id)
+                const SalvarNome = await BuscarDados(id);
+
+                const UsuarioCompleto = JSON.stringify(SalvarNome);
+                localStorage.setItem("DadosDoUsuario", UsuarioCompleto);
+
+
                 localStorage.setItem("NomeUsuario", SalvarNome.name);
                 console.log(`Novo usuário: ${SalvarNome}`);
+
+                const DadosCompletos = JSON.parse(localStorage.getItem("DadosUsarios"));
+                console.log(DadosCompletos.emal);
             };
 
         };
