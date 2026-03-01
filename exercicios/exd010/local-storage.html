@@ -63,7 +63,6 @@
     <div id="conteiner">
         <main>
             <img id="img" src="" alt="Imagens de cachorros">
-            <p>Carregando...</p>
             <button id="botao">Mudar de Cachorro</button>
         </main>
     </div>
@@ -79,14 +78,13 @@
                 try {
                 const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
                 const Cachorros = await ImagemCachorros.json();
+                Imagem.src = Cachorros.message;
                 } catch (error) {
                     console.log("Houve um erro ao buscar as imagens da API.")
                 };
-                
-
             };
 
-            Imagem = Cachorros.mensage
+            BuscarImagem(1)
 
         });
     </script>
