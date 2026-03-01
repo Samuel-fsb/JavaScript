@@ -69,23 +69,35 @@
 
 
     <script>
+        //Selecionando elemento via DOM.
         const Botao = document.getElementById('botao');
         const Imagem = document.getElementById('img');
+        const ValorLocal = localStorage.getItem("cachorros"); 
 
+        if(ValorLocal !== null){
+            Imagem.src = localStorage.getItem("cachorros");
+        };
+
+        
         Botao.addEventListener('click', () => {
-
+            
+            //Buscando imagens da API.
             const BuscarImagem = async () => {
                 try {
-                const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
-                const Cachorros = await ImagemCachorros.json();
-                Imagem.src = Cachorros.message;
-                } catch (error) {
-                    console.log("Houve um erro ao buscar as imagens da API.")
-                };
+                    const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const Cachorros = await ImagemCachorros.json();
+                    Imagem.src = Cachorros.message;
+
+                    //Salvando a imagem no armazenamento local.
+                    localStorage.setItem("cachorros", Cachorros.message);
+                    } catch (error) {
+                        console.log("Houve um erro ao buscar as imagens da API.")
+                    };
             };
-
-            BuscarImagem(1)
-
+            
+            //Chamando a função.
+            BuscarImagem()
+            
         });
     </script>
 </body>
