@@ -75,7 +75,7 @@
         const ValorLocal = localStorage.getItem("cachorros"); 
 
         if(ValorLocal !== null){
-            Imagem.src = localStorage.getItem("cachorros");
+            Imagem.src = ValorLocal;
         };
 
         
@@ -83,6 +83,7 @@
             
             //Buscando imagens da API.
             const BuscarImagem = async () => {
+                //Usando o try e catch para lidar com requisições da API que não funcionaram.
                 try {
                     const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
                     const Cachorros = await ImagemCachorros.json();
