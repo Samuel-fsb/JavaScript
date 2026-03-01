@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gog Image</title>
+    <title>God Image</title>
     <style>
         body{
             background-image: linear-gradient(to top, rgb(0, 191, 255), rgb(0, 30, 255));
@@ -44,16 +44,33 @@
             color: white;
             font-size: 20px;
             cursor: pointer;
+            margin-bottom: -370px;
         }
     </style>
 </head>
 <body>
-    <h1>Gere uma imagem aleaória de um cachorro clicando no botão abaixo</h1>
+    <h1>Gere uma imagem de cachorro clicando no botão abaixo</h1>
 
     <div id="conteiner">
         <main>
-            <button>Gerar Imagem</button>
+            <img id="img" src="" alt="">
+            <button id="botao">Mudar de Cachorro</button>
         </main>
     </div>
+
+
+    <script>
+        const Botao = document.getElementById('botao');
+        const Imagem = document.getElementById('img');
+
+        Botao.addEventListener('click', () => {
+
+            const BuscarImagem = async () => {
+                const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
+
+            };
+
+        });
+    </script>
 </body>
 </html>
