@@ -22,7 +22,7 @@ Todos os dias aprendo algo novo e faço exercícios para fixar o conhecimento de
 
 ### O que eu pratiquei?
 
-Nesses exercícios, foquei em aplicar os seguintes conceitos:
+Nesses exercícios, estudei os seguintes conceitos:
 
 * Programação orientada a objetos e arrays;
 * Add Event Listener e todos seus métodos;
