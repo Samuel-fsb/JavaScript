@@ -8,10 +8,35 @@
 <body>
 
     <script>
-        const Sum = (a, b) => a + b;
+       const ShoppingCart = {
+        user: { id: 1, firstName: 'Jonh', lastName: 'noe'},
 
-        console.log(Sum(1, 2));
-        console.log(Sum(1, 2));
+        Items: [
+        {product: { id: 1, name: 'banana'}, quantity: 10},
+        {product: { id: 2, name: 'maçã'}, quantity: 1}
+        ]
+       };
+
+       function FormatShoppingCart(ShoppingCart){
+        const Result = {
+            user: {
+                id: ShoppingCart.user,
+                name: `${ShoppingCart.user.firstName} ${ShoppingCart.user.lastName}`,
+            }
+        };
+
+        ShoppingCart.items.forEach((item) => {
+            item.product = {id: item.product.id}
+        });
+        
+        return Result;
+       };
+ 
+       console.log(FormatShoppingCart(ShoppingCart));
+       console.log(ShoppingCart);
+
+
+
     </script>
 </body>
 </html>
