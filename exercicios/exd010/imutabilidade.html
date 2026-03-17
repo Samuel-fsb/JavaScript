@@ -8,17 +8,27 @@
 <body>
 
     <script>
+        const Mercado1 = ['Laranja', 'banana' ];
+        const Mercado2 = [...Mercado1, 'maça'];
+        Mercado2.push('maça');
+
+
+
        const Casa1 = {
         cor: 'Amarelo',
         logadouro: 'Av. Brasil',
         numero: '20'
        };
 
-       const Casa2 = Casa1;
-       Casa2.numero = 30;
+       const Casa2 = { ...Casa1, numero:30};
+       
 
        console.log(Casa2);
-       console.log(Casa1)
+       console.log(Casa1);
+
+       console.log(Mercado1);
+       console.log(Mercado2);
+
     </script>
 </body>
 </html>
