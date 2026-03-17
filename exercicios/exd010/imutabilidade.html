@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <script>
+    <script type="module">
         /*const Mercado1 = ['Laranja', 'banana' ];
         const Mercado2 = [...Mercado1, 'maça'];
         Mercado2.push('maça');
@@ -26,7 +26,7 @@
        console.log(Casa1);
 
        console.log(Mercado1);
-       console.log(Mercado2);*/
+       console.log(Mercado2);
 
         const Jose = {
             name: 'Jose',
@@ -37,7 +37,7 @@
         };
 
         const Joao ={
-            ...Jose, /* Tirei uma cópia do objeto José e modifiquei o name */
+            ...Jose, 
             name: 'João',
         };
 
@@ -48,10 +48,29 @@
 
 
         console.log(Jose);
-        console.log(Joao);
+        console.log(Joao);*/
+
+
+        /* EXPORTAÇÃO E IMPORTAÇÃO */
+
+    
+
+        
+       
+
+        export function EscevaNome1(hero){
+            console.log(`SuperHero name is: ${hero.name}`);
+        }
+
+        export function EscrevaNome2(hero){
+            console.log(`SuperHero power is: ${hero.power}`);
+        };
 
 
 
+
+
+        
 
 
 
