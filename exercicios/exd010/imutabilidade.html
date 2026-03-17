@@ -8,10 +8,9 @@
 <body>
 
     <script>
-        const Mercado1 = ['Laranja', 'banana' ];
+        /*const Mercado1 = ['Laranja', 'banana' ];
         const Mercado2 = [...Mercado1, 'maça'];
         Mercado2.push('maça');
-
 
 
        const Casa1 = {
@@ -27,7 +26,36 @@
        console.log(Casa1);
 
        console.log(Mercado1);
-       console.log(Mercado2);
+       console.log(Mercado2);*/
+
+        const Jose = {
+            name: 'Jose',
+            idade: 18,
+            enderecos: [
+                { logadouro: 'Av. Brasil', numero: 10 }
+            ],
+        };
+
+        const Joao ={
+            ...Jose, /* Tirei uma cópia do objeto José e modifiquei o name */
+            name: 'João',
+        };
+
+        Joao.enderecos = [
+            ...Jose.enderecos,
+            {logadouro: 'Av. Santa Catarina', numero: 10},
+            ];
+
+
+        console.log(Jose);
+        console.log(Joao);
+
+
+
+
+
+
+
 
     </script>
 </body>
