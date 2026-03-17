@@ -8,35 +8,17 @@
 <body>
 
     <script>
-       const ShoppingCart = {
-        user: { id: 1, firstName: 'Jonh', lastName: 'noe'},
-
-        Items: [
-        {product: { id: 1, name: 'banana'}, quantity: 10},
-        {product: { id: 2, name: 'maçã'}, quantity: 1}
-        ]
+       const Casa1 = {
+        cor: 'Amarelo',
+        logadouro: 'Av. Brasil',
+        numero: '20'
        };
 
-       function FormatShoppingCart(ShoppingCart){
-        const Result = {
-            user: {
-                id: ShoppingCart.user,
-                name: `${ShoppingCart.user.firstName} ${ShoppingCart.user.lastName}`,
-            }
-        };
+       const Casa2 = Casa1;
+       Casa2.numero = 30;
 
-        ShoppingCart.items.forEach((item) => {
-            item.product = {id: item.product.id}
-        });
-        
-        return Result;
-       };
- 
-       console.log(FormatShoppingCart(ShoppingCart));
-       console.log(ShoppingCart);
-
-
-
+       console.log(Casa2);
+       console.log(Casa1)
     </script>
 </body>
 </html>
