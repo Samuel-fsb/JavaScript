@@ -64,3 +64,72 @@ for(let n = 3; n <= 11 ; n = n + 2){
 for(let n = 2 ; n <= 7 ; n = n + 1){
 console.log(n);
 };
+
+function factorial(N){
+  let f = 1;
+  for(let n = 2 ; n <= N ; n++){
+   f = n * f;
+  };
+  return f;
+};
+
+factorial(5);
+
+function sumFromTo(min, max){
+  let sum = 0;
+
+  for(let n = min ; n <=  max ; n++){
+    sum += n;
+  };
+  return sum;
+};
+
+sumFromTo(3, 5);
+
+function printFromTo(input, start, end) {
+  
+  for(let s = start ; s <= end ; s++){
+    console.log(input[s]);
+  };
+};
+
+
+function countMs(text) {
+  let letras = 0;
+  
+  for(let i = 0 ; i < text.length ; i++){
+    if(text[i] === 'M' || text[i] === 'm'){
+      letras += 1;
+    };
+  };
+
+  return letras;
+}
+
+function replaceA(input) {
+  let result = '';
+
+    for(let i = 0 ; i < input.length ; i++){
+      if(input[i] === 'a' || input[i] === 'A'){
+        result += '*';
+      }else{
+        result += input[i]
+      };
+    };
+      return result;
+};
+
+
+function replaceSpaces(input) {
+  let result = '';
+
+  // Write code here
+  for(let i = 0; i < input.length ; i++){
+    if(input[i] === ' '){
+      result += '-'
+    }else{
+      result += input[i];
+    }
+  };
+  return result;
+}
