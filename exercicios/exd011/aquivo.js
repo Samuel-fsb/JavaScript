@@ -48,3 +48,19 @@ function getTipsRating(amount) {
   }
     return "terrible";
 };
+
+let flowers = ['rose', 'tulip', 'sunflower', 'daisy', 'lily', 'lilac', 'orchid'];
+console.log(flowers[1]);
+
+let flowers2 = ['rose', 'tulip', 'sunflower', 'daisy', 'lily', 'lilac', 'orchid'];
+flowers[1] = 'peony';
+
+console.log(flowers);
+
+for(let n = 3; n <= 11 ; n = n + 2){
+  console.log(n);
+};
+
+for(let n = 2 ; n <= 7 ; n = n + 1){
+console.log(n);
+};
