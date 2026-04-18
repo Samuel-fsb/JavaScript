@@ -30,3 +30,37 @@ for(let i = 0 ; i < input.length ; i++){
   
   return count;
 }; 
+
+function getSum(numbers) {
+  let sum = 0;
+
+  for(let value of numbers){
+    sum += value;
+  };
+
+  return sum;
+}
+
+function getSum(numbers) {
+  let sum = 0;
+
+  // write code here
+  /*for(let value of numbers){
+    sum += value;
+  };
+*/
+
+for(let n = 0 ; n < numbers.length ; n++){
+    sum += numbers[n];
+};
+  return sum;
+}
+
+function splitWords(text) {
+  let result = [];
+
+  for(let m of text){
+      result = text.split(' ');
+  };
+  return result;
+};
