@@ -64,3 +64,25 @@ function splitWords(text) {
   };
   return result;
 };
+
+function joinWords(words, glue) {
+   let result = '';
+   for(let w of words){
+     result = words.join(glue);
+   };
+   return result;
+};
+
+function getFirstPosition(values, value){
+  for(let i = 0 ; i < values.length ; i++){
+      if(values[i] === value) return i;
+  };
+  return -1;
+};
+
+function checkWord(words, word) {
+  for(let w of words){
+    if(words.includes(word)) return true;
+  };
+  return false;
+};
