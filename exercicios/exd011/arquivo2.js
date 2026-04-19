@@ -86,3 +86,29 @@ function checkWord(words, word) {
   };
   return false;
 };
+
+function checkNumber(n) {
+  let result = [];
+  return result = [n > 0, n % 2 === 0, n % 10 === 0];
+};
+
+checkNumber(3);
+checkNumber(10);
+checkNumber(0);
+checkNumber(-1);
+
+function createArray(N) {
+  // write code here
+  let numbers = [];
+  for (let n = 1; n <= N ; n++){
+    if(N === 0){
+      return [];
+    };
+  numbers.push(n);
+  };
+    return numbers
+};
+
+createArray(1);
+createArray(3);
+createArray(0);
