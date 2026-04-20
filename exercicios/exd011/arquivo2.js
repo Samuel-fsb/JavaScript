@@ -112,3 +112,31 @@ function createArray(N) {
 createArray(1);
 createArray(3);
 createArray(0);
+
+function getArraysSum(arr1, arr2) {
+  // write code here
+  let result = 0;
+
+  for(let i = 0 ; i < arr1.length ; i++){
+    result += arr1[i] + arr2[i];
+  };
+
+  return result;
+};
+
+getArraysSum([1, 2], [3, 4]);
+getArraysSum([1, 2, 3, 4], [5, 6, 7, 8]);
+getArraysSum([], []); 
+
+function combineArrays(first, second) {
+  const result = [];
+
+  for(let i = 0 ; i < first.length ; i++){
+    result[i] = first[i] + second[i];
+  };
+  return result;
+};
+
+combineArrays([1, 2, 5], [3, 6, 1]);
+combineArrays([1], [6]);
+combineArrays([], []);
