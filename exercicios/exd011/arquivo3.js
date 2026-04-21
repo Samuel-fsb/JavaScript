@@ -1,6 +1,8 @@
+'use strict';
+
 function doublePower(currentPowers) {
   // write code here
-  let result = []
+  let result = [];
   for(let i = 0 ; i < currentPowers.length ; i++){
     result.push(currentPowers[i] * 2)
   }
@@ -23,6 +25,17 @@ function makeStickers(detailsCount, robotPart) {
   return result
 }
 
-makeStickers(3, ‘Body’); // [‘Body detail #1’, ‘Body detail #2’, ‘Body detail #3’]
-makeStickers(4, ‘Head’); // [‘Head detail #1’, ‘Head detail #2’, ‘Head detail #3’, ‘Head detail #4’]
+makeStickers(3, ‘Body’);
+makeStickers(4, ‘Head’);
 makeStickers(0, ‘Foot’);
+
+let meuPrimeiroValor = 'meuprimeirovalor';
+const meuSegundoValor = meuPrimeiroValor + 'meusegundovalor';
+const meuTerceiroValor = meuSegundoValor + 'meuterceirovalor';
+
+console.log(meuPrimeiroValor, meuSegundoValor, meuTerceiroValor);
+
+const trapezePerimeter = 2 + 4 + 4 + 10;
+const trianglePerimeter = 10 + 20 + 30;
+const rectanglePerimeter = 2 * (50 + 20);
+const bigMathFormula = (10 * trapezePerimeter + rectanglePerimeter * 100) - 228;
