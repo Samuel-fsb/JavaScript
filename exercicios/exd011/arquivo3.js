@@ -226,3 +226,53 @@ function calculateProfit(amount, percent, period) {
 
 calculateProfit(1000, 5, 1); 
 calculateProfit(12500, 3, 12); 
+
+function isWerewolf(target) {
+  let direct = '';
+  let reversed = '';
+  let letters = 'abcdefghijklmnopqrstuvxywz';
+
+  for (let string of target.toLowerCase()) {
+    if(letters.includes(string) === true){
+      direct += string;
+      reversed = string + reversed;
+    }
+  }
+  return direct === reversed;
+}
+
+isWerewolf('rotator'); 
+isWerewolf('home');
+isWerewolf('Racecar'); 
+isWerewolf('eva, can i see bees in a cave'); 
+
+function splitString(str) {
+  let result = [];
+  if(str.length % 2 !== 0) {
+    str += '_';
+    }
+
+  for(let i = 0 ; i < str.length ; i += 2){
+      result.push(str[i] + str[i + 1]);
+     }
+
+  return result;
+}
+
+splitString('123456');
+splitString('ab cd ef'); 
+splitString('abc'); 
+splitString(' '); 
+splitString(''); 
+
+
+
+ function multiply(a, b = 1) {
+
+    return a * b;
+  }
+
+multiply(3);
+multiply(5, 10) 
+multiply(24) 
+
