@@ -182,3 +182,47 @@ getSpeedStatistic([]);
 getSpeedStatistic([10]); 
 getSpeedStatistic([8, 9, 3, 12]);
 getSpeedStatistic([10, 10, 11, 9, 12, 8]); 
+
+
+function getSuccessRate(statistic) {
+  
+  let num = '';
+
+  if(statistic === ''){
+    return 0;
+  }
+
+  for(const string of statistic){
+    
+    if(string === '1') {
+      num++
+    }
+  }
+
+  return (num / statistic.length) * 100;
+}
+
+getSuccessRate('11100'); 
+getSuccessRate('1100'); 
+getSuccessRate('000000'); 
+getSuccessRate('11111');
+getSuccessRate(''); 
+
+
+function getGuestsCount(guestsInput){
+
+  let guestsNumber = parseInt(guestsInput)
+  return isNaN(guestsNumber) ? 'not a number' : guestsNumber;
+}
+
+function calculateProfit(amount, percent, period) {
+  let total = amount;
+
+   for(let i = 0 ; i < period ; i++){
+     total += (total * percent) / 100; 
+   }
+   return total - amount;
+}
+
+calculateProfit(1000, 5, 1); 
+calculateProfit(12500, 3, 12); 
