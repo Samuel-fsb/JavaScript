@@ -276,3 +276,108 @@ multiply(3);
 multiply(5, 10) 
 multiply(24) 
 
+function getTask(weekday) {
+  
+  switch (weekday) {
+    case 'monday': 
+    return 'Write a new module for the program';
+
+    case 'tuesday':
+    return 'Test the module and find bugs';
+
+    case 'wednesday':
+    return 'Write a new module for the program';
+
+    case 'thursday':
+    return 'Test the module and find bugs';
+
+    case 'friday':
+    return 'You need to meet the boss today';
+
+    case 'saturday':
+    return 'Spend the evening with your friends';
+
+    case 'sunday':
+    return 'Go to the movies in the evening';
+
+    default:
+    return 'Entered the wrong day of the week';
+    }
+  }
+
+getTask(sunday);
+
+const contador = 5;
+
+  switch (true) {
+    case contador < 5:
+    console.log('Poucos');
+    break;
+
+    case contador > 10:
+    console.log('Muitos');
+    break;
+
+    default:
+    console.log('Alguns');
+  }
+
+  function getDirection (direction) {
+
+  switch (direction) {
+    case 'forward':
+    return 'hor=0 ver=1';
+
+    case 'back':
+    return 'hor=0 ver=-1';
+
+    case 'right':
+    return 'hor=1 ver=0';
+
+    case 'left':
+    return 'hor=-1 ver=0';
+
+    default:
+    return 'hor=0 ver=0';
+  }
+}
+
+getDirection('right');
+
+function findCalculationType(a, b, res) {
+
+  switch (res) {
+    case a + b:
+    return 'addition';
+
+    case a - b:
+    return 'subtraction';
+
+    case a * b:
+    return 'multiplication';
+
+    case  a / b:
+    return 'division';
+
+    default:
+    return 'Não foi possível realizar os cálculos com os valores fornecidos';
+  }
+}
+
+findCalculationType(1, 2, 3);
+
+function getDrinksWithStep(numberOfGuests, step) {
+  let result = 0;
+
+  for(let n = 1 ; n <= numberOfGuests; n += step) {
+    
+
+    result += n;
+  }
+  return result
+}
+
+getDrinksWithStep(10, 3); 
+getDrinksWithStep(0, 5); 
+getDrinksWithStep(5, 3); 
+getDrinksWithStep(18, 10); 
