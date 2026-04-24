@@ -25,9 +25,9 @@ function makeStickers(detailsCount, robotPart) {
   return result
 }
 
-makeStickers(3, ‘Body’);
-makeStickers(4, ‘Head’);
-makeStickers(0, ‘Foot’);
+makeStickers(3, 'Body');
+makeStickers(4, 'Head');
+makeStickers(0, 'Foot');
 
 let meuPrimeiroValor = 'meuprimeirovalor';
 const meuSegundoValor = meuPrimeiroValor + 'meusegundovalor';
@@ -381,3 +381,4 @@ getDrinksWithStep(10, 3);
 getDrinksWithStep(0, 5); 
 getDrinksWithStep(5, 3); 
 getDrinksWithStep(18, 10); 
+
