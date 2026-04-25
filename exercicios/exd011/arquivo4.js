@@ -49,3 +49,21 @@ getWinner('34', 35);
 getWinner(24, 28);
 getWinner('13', '11'); 
 getWinner(15, '15');
+
+function isTidy(n) {
+  let prev = 0;
+
+  for(const digit of String(n)) {
+    if (prev > digit) {
+     return false;
+    } 
+    prev = digit;
+  }
+  return true;
+}
+
+isTidy(12); 
+isTidy(32); 
+isTidy(1024);
+isTidy(3445); 
+isTidy(13579);
