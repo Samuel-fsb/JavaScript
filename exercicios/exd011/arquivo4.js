@@ -105,3 +105,26 @@ function makeAbbr(words) {
 makeAbbr('national aeronautics space administration');
 makeAbbr('central processing unit');
 makeAbbr('simplified molecular input line entry specification');
+
+function canTheyBook(adultsCount = 0, childrenCount = 0) {
+  let room = adultsCount + childrenCount;
+  const maxChilddrenPerAdult = adultsCount * 2;
+
+  if(adultsCount === 0) {
+    return false;
+  }
+
+  if(room > 8) {
+    return false;
+  }
+
+  if(maxChilddrenPerAdult >= 8) {
+    return true;
+  }
+
+  if(childrenCount <= adultsCount * 2) {
+    return true;
+  }
+
+  return false;
+}
