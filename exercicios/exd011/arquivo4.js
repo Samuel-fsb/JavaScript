@@ -67,3 +67,41 @@ isTidy(32);
 isTidy(1024);
 isTidy(3445); 
 isTidy(13579);
+
+function isJumping(n) {
+  let number = String(n);
+
+  for (let i = 1 ; i < number.length ; i++) {
+    let difference = number[i] - number[i - 1];
+
+    if (difference !== 1 && difference !== -1) {
+      return 'NOT JUMPING';
+    }
+  }
+  return 'JUMPING';
+}
+
+
+isJumping(9); 
+isJumping(79); 
+isJumping(7889);
+isJumping(23454); 
+
+
+function makeAbbr(words) {
+  
+  let abbreviation = words[0].toUpperCase();
+
+  for (let i = 0 ; i < words.length ; i++) {
+    if (words[i] === ' ') {
+    abbreviation += words[i + 1].toUpperCase();
+
+    }
+  }
+
+  return abbreviation;
+}
+
+makeAbbr('national aeronautics space administration');
+makeAbbr('central processing unit');
+makeAbbr('simplified molecular input line entry specification');
