@@ -179,3 +179,41 @@ recommendRoom(3, 2);
 recommendRoom(3, 0, 2);
 recommendRoom(7, 0, 2);
 recommendRoom(8);
+
+function getOutdated(robots, newVersion) {
+  let results = [];
+
+  for (let i = 0 ; i < robots.length ; i++) {
+    if (robots[i].coreVersion < newVersion)
+    results.push(i);
+  }
+
+  return results;
+}
+
+getOutdated(robots, 10);
+getOutdated(robots, 14); 
+getOutdated(robots, 8); 
+getOutdated(robots, 18); 
+
+function restoreNames(users) {
+  for (let i = 0 ; i < users.length ; i++) {
+    if (!users[i].firstName) {
+    users[i].firstName = users[i].fullName.split(" ")[0];
+    }
+  }
+}
+
+function countBoxes(boxes) {
+  const box = {};
+
+  for (let i = 0 ; i < boxes.length ; i++) {
+      if (!box[boxes[i]]) {
+        box[boxes[i]] = 0 + 1;
+      } else {
+        box[boxes[i]]++;
+      }
+  }
+
+  return box;
+}
