@@ -128,3 +128,54 @@ function canTheyBook(adultsCount = 0, childrenCount = 0) {
 
   return false;
 }
+
+function canTheyBook(adultsCount = 0, childrenCount = 0, babiesCount = 0) {
+  let total = adultsCount + childrenCount + babiesCount;
+
+  if(adultsCount <= 0) {
+    return false;
+  }
+
+  if(childrenCount + babiesCount > adultsCount * 2) {
+    return false;
+  }
+
+  if(babiesCount > adultsCount) {
+    return false;
+  }
+
+  return total <= 8 || (total === 9 && babiesCount > 0);
+}
+
+canTheyBook(0, 1, 1);
+canTheyBook(2, 3, 1); 
+canTheyBook(2);
+canTheyBook(9); 
+canTheyBook(8, 1);
+canTheyBook(8, 0, 1);
+canTheyBook(4, 2, 3); 
+
+function recommendRoom(adultsCount = 0, childrenCount = 0, babiesCount = 0) {
+  const total = adultsCount + childrenCount + babiesCount;
+
+  if (total <= 4) {
+    return 'small room';
+  }
+
+  if (total === 5 && babiesCount > 0) {
+    return 'small room + extra bed';
+  }
+
+  if (total <= 8) {
+    return 'big room';
+  }
+
+  return 'big room + extra bed';
+}
+
+recommendRoom(2, 2, 1);
+recommendRoom(2, 1, 1);
+recommendRoom(3, 2);
+recommendRoom(3, 0, 2);
+recommendRoom(7, 0, 2);
+recommendRoom(8);
