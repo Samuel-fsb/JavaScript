@@ -217,3 +217,65 @@ function countBoxes(boxes) {
 
   return box;
 }
+
+function isSorted(boxNumbers) {
+
+    for (let i = 1 ; i < boxNumbers.length ; i++) {
+        if (boxNumbers[i] < boxNumbers[i - 1]) {
+           return false;
+        }
+    }
+    return true;
+}
+
+isSorted([1, 2, 3, 4, 5]); 
+isSorted([0, 1, 1, 1, 2]);
+isSorted([1, 2, 11]);
+isSorted([5]);
+isSorted([]); 
+isSorted([0, 3, 1, 2, 2, 2]); 
+isSorted([1, 11, 2]);
+
+function removeVowels(doc) {
+ let volwels = '';
+
+ for (let i = 0 ; i < doc.length ; i++) {
+      if (!'aeiouy'.includes(doc[i].toLowerCase())) {
+      volwels += doc[i];
+      }
+ }
+
+ return volwels;
+}
+
+removeVowels('document'); 
+removeVowels('I like my boss'); 
+removeVowels('350 euro'); 
+
+
+function compareRobots(firstRobotResults, secondRobotResults) {
+  let robot1 = 0;
+  let robot2 = 0;
+
+  for (let i = 0 ; i < firstRobotResults.length ; i++) {
+    robot1 += firstRobotResults[i]
+  }
+
+  for (let i = 0 ; i < secondRobotResults.length ; i++) {
+    robot2 += secondRobotResults[i]
+  }
+
+  if (robot1 > robot2) {
+    return 'First robot for sale!'
+  }
+
+  if (robot1 < robot2) {
+    return 'Second robot for sale!';
+  }
+
+  return 'Both robots for sale!';
+}
+
+compareRobots([12, 4, 13], [1, 1, 4, 5, 12]); 
+compareRobots([9, 7, 9], [1, 3, 4, 5, 12]); 
+compareRobots([1, 3, 4], [1, 1, 4, 5]); 
