@@ -279,3 +279,26 @@ function compareRobots(firstRobotResults, secondRobotResults) {
 compareRobots([12, 4, 13], [1, 1, 4, 5, 12]); 
 compareRobots([9, 7, 9], [1, 3, 4, 5, 12]); 
 compareRobots([1, 3, 4], [1, 1, 4, 5]); 
+
+function getLocation(coordinates, commands) {
+  let x = coordinates[0];
+  let y = coordinates[1];
+
+  for (let i = 0 ; i < commands.length ; i++) {
+    if (commands[i] === 'forward') {
+      y++;
+    } else if (commands[i] === 'back') {
+     y--;
+    } else if (commands[i] === 'right') {
+     x++;
+    } else if (commands[i] === 'left') {
+     x--;
+      }
+    }
+
+  return [x, y];
+}
+
+getLocation([0, 0], ['forward', 'right']);
+getLocation([2, 3], ['back', 'back', 'back', 'right']); 
+getLocation([0, 5], ['back', 'back', 'back', 'right', 'left', 'forward']); 
