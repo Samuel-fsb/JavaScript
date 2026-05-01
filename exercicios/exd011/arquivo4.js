@@ -302,3 +302,41 @@ function getLocation(coordinates, commands) {
 getLocation([0, 0], ['forward', 'right']);
 getLocation([2, 3], ['back', 'back', 'back', 'right']); 
 getLocation([0, 5], ['back', 'back', 'back', 'right', 'left', 'forward']); 
+
+const compareRobots = (robot1, robot2) => {
+    let robotKeys1 = Object.keys(robot1);
+    let robotKeys2 = Object.keys(robot2);
+
+  for (let i = 0 ; i < robotKeys1.length ; i++) {
+
+    if (robotKeys1[i] === 'serialNo') {
+      continue;
+    }
+
+    if (robot1[robotKeys1[i]] !== robot2[robotKeys1[i]]) {
+      return false;
+    }
+
+    if (robotKeys1.length !== robotKeys2.length) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const charlie = { serialNo: 1, chipVer: 12 };
+
+const lordy = { serialNo: 2, chipVer: 12 };
+compareRobots(charlie, lordy);
+
+const paul = { serialNo: 3, chipVer: 15 };
+compareRobots(paul, charlie);
+
+const mike = { serialNo: 4, chipVer: 12, wheels: 1 };
+compareRobots(mike, charlie);
+
+const max = { serialNo: 5, engineVer: 12 };
+compareRobots(max, charlie);
+
+const steve = { serialNo: 6 };
+compareRobots(steve, charlie); 
