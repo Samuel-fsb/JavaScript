@@ -1,0 +1,102 @@
+html {
+  scroll-behavior: smooth;
+  --button-height: 50px;
+  --button-width: 55px;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+
+  --header-height: 60px;
+  --footer-height: 60px;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.section {
+  padding: 20px;
+}
+
+.scrollTop__link{
+  color: white;
+  font-size: 30px;
+}
+
+.container {
+  min-width: 500px;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 500px;
+  background-color: cornsilk;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid gainsboro;
+}
+
+.footer {
+  background-color: #444;
+  text-align: center;
+  line-height: var(--footer-height);
+  color: #fff;
+  height: var(--footer-height);
+}
+
+.logo {
+  display: inline-block;
+  margin-right: 40px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  color: #fff;
+}
+
+.nav {
+  position: sticky;
+  text-align: center;
+  height: var(--header-height);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.nav__link:link {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 20px 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__link:visited {
+  color: green;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
+.heading {
+  text-align: center;
+}
+
+.scrollTop{
+  position: fixed;
+  right: 32px;
+  bottom: 64px;
+  background-color: blue;
+  height: var(--button-height);
+  width: var(--button-width);
+  border-radius: 6px;
+}
