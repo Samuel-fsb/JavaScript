@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .row{
+       margin-bottom: 20px;
+    }
+
+    .space{
+      margin-bottom: 10px;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="https://mate-academy-form-lesson.herokuapp.com/create-application"           method="post">
+
+    <fieldset class="fieldset row">
+      <legend>Personal information</legend>
+        <label for="surname"> Surname: </label>
+          <input type="text" name="surname" id="surname" class="space"><br>
+
+        <label for="name">Name:</label>
+          <input type="text" name="name" id="name" class="space"><br>
+
+        <label for="age">How old are You?</label>
+          <input type="number" name="age" id="age" value="18" min="1" max="100" class="space"><br>
+
+        <label for="date">Full date of birth:</label>
+          <input type="date" name="birthday" value="18" id="date" class="space"><br>
+
+          I accept the term of the agreement
+          <label for="accepted"></label>
+          <input type="checkbox" name="accepted" value="yes" id="accepted" required class="space">
+    </fieldset>
+
+    <fieldset class="fieldset row">
+      <legend>Registration</legend>
+        <label for="email">
+        Email:
+        <input type="email" name="email" placeholder="email@example.com" required id="email" class="space"><br>
+        </label>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required minlength="6" maxlength="30">
+     </fieldset>
+
+
+    <fieldset class="fieldset row">
+      <legend>An interesting fact about you!</legend>
+       
+        <label for="radio1">Do you love cats?</label>
+          <input type="radio" name="radio1" id="radio1"> Yes 
+
+        <label for="radio2"></label>
+          <input type="radio" name="radio2" id="radio2"> No <br>
+
+        <label for="color">What is your favorite color?</label>
+          <input type="color" name="color" id="color"> <br>
+
+        <label for="time">What time do you go to bed?</label>
+          <input type="time" name="time" id="time"> <br>
+
+        <label for="options">What are your favorite brand of cars?</label>
+        <select name="" id="options"></select> <br>
+
+        <label for="">How do you rate our work?</label>
+    </fieldset>
+
+
+    <fieldset class="fieldset row">
+      <legend>Additional info:</legend>
+      
+      <textarea name="comments:" id="" cols="30" rows="10"></textarea> <br>
+      Would you recommend us?
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
