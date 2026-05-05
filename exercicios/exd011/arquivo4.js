@@ -340,3 +340,38 @@ compareRobots(max, charlie);
 
 const steve = { serialNo: 6 };
 compareRobots(steve, charlie); 
+
+
+function getTriathlonDistance(distance) {
+  const totalDistance = 3.86 + 180.25 + 42.2;
+
+  const distanceT = 226.31 - distance;
+  
+  const restDistance = distanceT.toFixed(2);
+
+  if(distance === 0){
+    return 'Starting Line... Good Luck!'
+  }
+
+  if(distance > 0 && distance < 3.86){
+    return { swim: `${restDistance} to go!` }; 
+  }
+
+  if(distance >= 3.86 && distance < 184.11){
+    return { bike: `${restDistance} to go!` };
+  }
+
+  if(distance >= 184.11 && distance < 226.31){
+    return { run: `${restDistance} to go!` };
+  }
+
+  if(distance >= totalDistance){
+    return 'You\'re done! Stop running!';
+  }
+}
+
+getTriathlonDistance(39);
+getTriathlonDistance(2.05); 
+getTriathlonDistance(200.31); 
+getTriathlonDistance(0);
+getTriathlonDistance(226.31);
