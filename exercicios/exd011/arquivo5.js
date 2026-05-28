@@ -27,3 +27,36 @@ numbers.map = function(callback) {
 
   return result;
 };
+
+numbers.some = function(callback) {
+  
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i], i, this)) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+numbers.reduce = function(callback, startValue) {
+  let prevResult = startValue !== undefined ? startValue : this[0];
+  const startIndex = startValue !== undefined ? 0 : 1;
+
+  for (let i = startIndex; i < this.length; i++) {
+    prevResult = callback(prevResult, this[i], i, this);
+  }
+
+  return prevResult;
+};
+
+numbers.every = function(callback) {
+  
+  for (let i = 0; i < this.length; i++) {
+    if (!callback(this[i], i, this)) {
+      return false;
+    }
+  }
+
+  return true;
+};
