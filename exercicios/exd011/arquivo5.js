@@ -83,3 +83,25 @@ function makePackage(connectionsLimit) {
     return `${connectionsLeft} connections left`;
   };
 }
+
+function makeRandomizer(numbers) {
+  const [start, end] = numbers;
+  const availableNumbers = [];
+
+  for (let i = start; i <= end; i++) {
+    availableNumbers.push(i);
+  }
+
+  return () => {
+    if (availableNumbers.length === 0) {
+      return null;
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableNumbers.length);
+    const result = availableNumbers[randomIndex];
+
+    availableNumbers.splice(randomIndex, 1);
+
+    return result;
+  };
+}
