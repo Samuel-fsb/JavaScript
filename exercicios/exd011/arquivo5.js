@@ -60,3 +60,26 @@ numbers.every = function(callback) {
 
   return true;
 };
+
+function makeTool(part) {
+  return function(robot) {
+    const robotCopy = { ...robot };
+
+    delete robotCopy[part];
+
+    return robotCopy;
+  };
+}
+
+function makePackage(connectionsLimit) {
+  let connectionsLeft = connectionsLimit;
+
+  return () => {
+    if (connectionsLeft <= 0) {
+      return 'You reached the connections limit!';
+    }
+    connectionsLeft--;
+
+    return `${connectionsLeft} connections left`;
+  };
+}
