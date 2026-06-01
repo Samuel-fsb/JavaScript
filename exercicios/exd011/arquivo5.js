@@ -144,3 +144,34 @@ function makeSpyListener() {
 
   return listener;
 }
+
+function makeSecret(secret, password) {
+  let currentSecret = secret;
+  let currentPassword = password;
+  let wrongPassword = 0;
+
+  const storage = () => 'Absolutely not a secret thing';
+
+  storage.getSecret = (userPassword) => {
+    if (wrongPassword === 3) {
+      return null;
+    }
+
+    if (userPassword === currentPassword) {
+      wrongPassword = 0;
+
+      return currentSecret;
+    };
+    wrongPassword++;
+
+    return 'Wrong password!';
+  };
+
+  storage.setSecret = (newSecret, newPassword) => {
+    currentSecret = newSecret;
+    currentPassword = newPassword;
+    wrongPassword = 0;
+  };
+
+  return storage;
+}
