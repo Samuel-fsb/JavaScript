@@ -105,3 +105,42 @@ function makeRandomizer(numbers) {
     return result;
   };
 }
+
+function makeWarehouse(goods = []) {
+  let totalWeight = goods.reduce((acc, item) => acc + item, 0);
+  let count = goods.length;
+  let averageWeight = 0;
+
+  return (...args) => {
+    totalWeight += args.reduce((acc, item) => acc + item, 0);
+
+    count += args.length;
+
+    averageWeight = count > 0 ? totalWeight / count : 0;
+
+    return {
+      totalWeight,
+      averageWeight,
+    };
+  };
+}
+
+function makeSpyListener() {
+  const data = [];
+
+  const listener = (...robotData) => {
+    if (robotData.length === 0) {
+      return data;
+    }
+
+    data.push(...robotData);
+  };
+
+  listener.clear = () => {
+    data.length = 0;
+
+    return 'Transferring data... Deleting data... Clear!';
+  };
+
+  return listener;
+}
