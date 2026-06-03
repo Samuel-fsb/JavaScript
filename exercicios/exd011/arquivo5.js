@@ -239,6 +239,7 @@ Object.setPrototypeOf(kerbin, movementCore);
 Object.setPrototypeOf(movementCore, navigationCore);
 Object.setPrototypeOf(navigationCore, mainCore);
 
+
 function getFather(people, person) {
   if (!person.father) {
     return null;
@@ -248,3 +249,30 @@ function getFather(people, person) {
 
   return father || null;
 }
+
+function Robot(name) {
+  this.name = name;
+
+  this.coords = {
+    x: 0,
+    y: 0,
+  };
+};
+
+Robot.prototype.goForward = function() {
+  this.coords.y += 1;
+};
+
+Robot.prototype.goBack = function() {
+  this.coords.y -= 1;
+};
+
+Robot.prototype.goRight = function() {
+  this.coords.x += 1;
+};
+
+Robot.prototype.goLeft = function() {
+  this.coords.x -= 1;
+};
+
+const robert = new Robot('robert');
