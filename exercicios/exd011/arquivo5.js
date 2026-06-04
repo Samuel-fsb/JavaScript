@@ -276,3 +276,34 @@ Robot.prototype.goLeft = function() {
 };
 
 const robert = new Robot('robert');
+
+function omitMethod() {
+  Object.prototype.omit = function omit(keys) {
+    const newKeys = { ...this };
+
+    for (const key of keys) {
+      delete newKeys[key];
+    };
+
+    return newKeys;
+  };
+}
+
+function groupByMethod() {
+  Array.prototype.groupBy = function(callback) {
+    const newGroup = {};
+
+    for (let i = 0; i < this.length; i++) {
+      const item = this[i];
+      const key = callback ? callback(item) : item;
+
+      if (!newGroup[key]) {
+        newGroup[key] = [];
+      }
+      newGroup[key].push(item);
+
+    };
+
+    return newGroup;
+  };
+} 
