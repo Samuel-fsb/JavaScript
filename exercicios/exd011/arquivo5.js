@@ -307,3 +307,45 @@ function groupByMethod() {
     return newGroup;
   };
 } 
+
+class BankAccount {
+  constructor(name, money) {
+    this.name = name;
+    this.money = money;
+    this.history = [`Initial: ${money}`];
+  }
+  getInfo() {
+    return `Name: ${this.name}, Amount: ${this.money}`;
+  };
+
+  addMoney(amount, info) {
+    this.money += amount; 
+    return this.history.push(`${info}: ${amount}`); 
+  };
+
+  withdrawMoney(amount, info) {
+    this.money -= amount;
+    return this.history.push(`${info}: -${amount}`);
+  };
+
+  getAccountHistory() {
+    return this.history;
+  };
+}
+
+const dmytro = new BankAccount('Dmytro', 1000);
+const pavel = new BankAccount('Pavel', 400);
+
+dmytro.getInfo();
+
+dmytro.addMoney(2000, 'salary');
+dmytro.withdrawMoney(500, 'new phone');
+dmytro.getInfo();
+
+dmytro.withdrawMoney(500, 'apartment rent');
+dmytro.getInfo(); 
+
+dmytro.getAccountHistory();
+
+pavel.getInfo(); 
+pavel.getAccountHistory(); 
