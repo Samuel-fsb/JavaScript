@@ -185,3 +185,7 @@ const people = [carolus, emma, maria, carel];
 
 people.sort(createSorterBy('name'));
 people.sort(createSorterBy('born'));
+
+function toArrayOfDigits(n) {
+  return String(n).split('').reverse().map(Number);
+}
