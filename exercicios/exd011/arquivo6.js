@@ -189,3 +189,7 @@ people.sort(createSorterBy('born'));
 function toArrayOfDigits(n) {
   return String(n).split('').reverse().map(Number);
 }
+
+function countOccurrences(phrase, part) {
+  return phrase.split(part).length - 1;
+}
