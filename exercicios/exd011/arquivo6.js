@@ -193,3 +193,19 @@ function toArrayOfDigits(n) {
 function countOccurrences(phrase, part) {
   return phrase.split(part).length - 1;
 }
+
+function isArrayPretty(numbers) {
+  if (numbers.length === 0) {
+    return false;
+  }
+
+  return numbers.every(n => numbers.includes(n - 1) || numbers.includes(n + 1));
+}
+
+function isArrayPretty(numbers) {
+  if (numbers.length === 0) {
+    return false;
+  }
+
+  return numbers.every(n => numbers.includes(n - 1) || numbers.includes(n + 1));
+}
