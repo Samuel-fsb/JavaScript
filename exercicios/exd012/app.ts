@@ -7,8 +7,6 @@ function calculate(x: number, y:number, z: number) {
 calculate(2, 3, 10);
 calculate(1, 3, 5);
 
-'use strict';
-
 type UserId = string | number;
 function getBinaryId(userId: UserId): string {
   if (typeof userId === 'number') {
@@ -17,4 +15,10 @@ function getBinaryId(userId: UserId): string {
 
   return parseInt(userId, 16).toString(2);
   
+}
+
+function getDigits(n: number): number[] {
+  const orderedNumber: number[] = String(n).split('').sort().map(Number);
+
+  return orderedNumber;
 }
