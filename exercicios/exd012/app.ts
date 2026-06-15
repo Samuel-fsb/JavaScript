@@ -22,3 +22,13 @@ function getDigits(n: number): number[] {
 
   return orderedNumber;
 }
+
+function canIWear(mySize: string, itemSize: string): boolean {
+  const sizes: string[] = ['xs', 's', 'm', 'l', 'xl'];
+
+  if (sizes.indexOf(itemSize) >= sizes.indexOf(mySize)) {
+    return true;
+  }
+
+  return false;
+}
