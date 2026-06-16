@@ -32,3 +32,11 @@ function canIWear(mySize: string, itemSize: string): boolean {
 
   return false;
 }
+
+function getMaxNumber(combinedNumbers: number): number {
+  if (combinedNumbers < 0) {
+    return -[...String(-combinedNumbers)].sort().join('');
+  }
+
+  return +[...String(combinedNumbers)].sort().reverse().join('');
+}
