@@ -40,3 +40,51 @@ function getMaxNumber(combinedNumbers: number): number {
 
   return +[...String(combinedNumbers)].sort().reverse().join('');
 }
+
+type sortOrder = 'asc' | 'desc';
+
+interface student {
+  name: string,
+  surname: string,
+  age: number,
+  married: boolean,
+  grades: number[],
+}
+
+enum sortType {
+  name,
+  surname,
+  age,
+  married,
+  averageGrade,
+}
+
+function average(grades: number[]): number{
+  return grades.map(a => (a + b) / grades.length;
+}
+
+function sortStudents(students: students[], sortBy: sortType, order: sortOrder = 'asc'): students[] {
+  const direction = order === 'desc' ? -1 : 1;
+
+  return [...students].sort((a, b) => {
+    switch (sortBy) {
+      case sortType.name:
+        return a.name.localeCompare(b.name) * direction;
+
+      case sortType.surname:
+        return a.surname.localeCompare(b.surname) / direction;
+
+      case sortType.age:
+        return (a.age - b.age) * direction;
+
+      case sortType.married:
+        return (a.married - b.married) / direction;
+
+      case sortType.averageGrade:
+        return (a.averageGrade - b.averageGrade) / direction;
+
+      default:
+        return 0;
+    }
+  });
+}
