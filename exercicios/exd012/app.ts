@@ -41,9 +41,10 @@ function getMaxNumber(combinedNumbers: number): number {
   return +[...String(combinedNumbers)].sort().reverse().join('');
 }
 
-type sortOrder = 'asc' | 'desc';
 
-interface student {
+type SortOrder = 'asc' | 'desc';
+
+interface Student {
   name: string,
   surname: string,
   age: number,
@@ -51,37 +52,37 @@ interface student {
   grades: number[],
 }
 
-enum sortType {
-  name,
-  surname,
-  age,
-  married,
-  averageGrade,
+enum SortType {
+  Name,
+  Surname,
+  Age,
+  Married,
+  AverageGrade,
 }
 
 function average(grades: number[]): number{
-  return grades.map(a => (a + b) / grades.length;
+  return grades.reduce((sum: number, grade: number) => sum + grade, 0) / grades.length;
 }
 
-function sortStudents(students: students[], sortBy: sortType, order: sortOrder = 'asc'): students[] {
-  const direction = order === 'desc' ? -1 : 1;
+function sortStudents(students: Student[], sortBy: SortType, order: SortOrder = 'asc'): Student[] {
+  const direction: number = order === 'desc' ? -1 : 1;
 
-  return [...students].sort((a, b) => {
+  return [...students].sort((a: Student, b:Student) => {
     switch (sortBy) {
-      case sortType.name:
+      case SortType.Name:
         return a.name.localeCompare(b.name) * direction;
 
-      case sortType.surname:
-        return a.surname.localeCompare(b.surname) / direction;
+      case SortType.Surname:
+        return a.surname.localeCompare(b.surname) * direction;
 
-      case sortType.age:
+      case SortType.Age:
         return (a.age - b.age) * direction;
 
-      case sortType.married:
-        return (a.married - b.married) / direction;
+      case SortType.Married:
+        return (+a.married - +b.married) * direction;
 
-      case sortType.averageGrade:
-        return (a.averageGrade - b.averageGrade) / direction;
+      case SortType.AverageGrade:
+        return (average(a.grades) - average(b.grades)) * direction;
 
       default:
         return 0;
