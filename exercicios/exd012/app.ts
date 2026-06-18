@@ -89,3 +89,23 @@ function sortStudents(students: Student[], sortBy: SortType, order: SortOrder = 
     }
   });
 }
+
+type Topping = 'cheese' | 'peppers' | 'salami' | 'pepperoni' | 'mushrooms' | 'olives';
+
+interface Order {
+  name: string,
+  toppings: Topping[],
+}
+
+class Pizza {
+  createdOn: Date = new Date();
+  constructor(public name: string,  public toppings: Topping[],) {
+  } 
+}
+
+class PizzaMaker {
+  static create(order: Order): Pizza {
+    const { name, toppings } = order;
+    return new Pizza(name, toppings);
+  }
+}
