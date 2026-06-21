@@ -109,3 +109,7 @@ class PizzaMaker {
     return new Pizza(name, toppings);
   }
 }
+
+function mergeObjects<T, R>(a: T, b: R): T & R{
+  return {...b, ...a}; 
+}
